@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 module.exports = {
   entry: {
@@ -12,10 +11,10 @@ module.exports = {
   },
   target: 'node',
   node: {
-    __dirname: false, // if you don't put this is, __dirname
-    __filename: false, // and __filename return blank or /
+    __dirname: false,
+    __filename: false,
   },
-  externals: [nodeExternals()], // Need this to avoid error when working with Express
+  externals: [nodeExternals()],
   module: {
     rules: [
       {

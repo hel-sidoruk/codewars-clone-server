@@ -1,20 +1,16 @@
 // eslint-disable-next-line no-undef
 module.exports = {
   root: true,
-  extends: ['prettier', 'eslint:recommended', 'plugin:react/recommended'],
+  extends: ['prettier', 'eslint:recommended'],
   env: {
-    browser: true,
     es2021: true,
     node: true,
   },
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-    },
   },
-  plugins: ['prettier', 'react'],
+  plugins: ['prettier'],
   rules: {
     'no-alert': 0,
     'no-param-reassign': [2, { props: false }],
