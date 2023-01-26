@@ -20,6 +20,7 @@ Api for "RS Clone".
     - [Get Users](https://github.com/hel-sidoruk/rs-clone-server#get-users)
     - [Get User](https://github.com/hel-sidoruk/rs-clone-server#get-user)
     - [Create User](https://github.com/hel-sidoruk/rs-clone-server#create-user)
+    - [Update User](https://github.com/hel-sidoruk/rs-clone-server#update-user)
 - **Discuss**
     - [Get Comments](https://github.com/hel-sidoruk/rs-clone-server#get-comments)
     - [Create Comment](https://github.com/hel-sidoruk/rs-clone-server#create-comment)
@@ -129,7 +130,7 @@ Adds a new kata in a database.
 
 * **URL**
 
-    /kata
+    /api/kata
 
 * **Method:**
 
@@ -280,7 +281,7 @@ Adds a new user in a database.
 
 * **URL**
 
-    /user
+    /api/user
 
 * **Method:**
 
@@ -327,6 +328,51 @@ Adds a new user in a database.
 
 </details>
 
+**Update User**
+----
+Updates specified user.
+
+<details>
+
+* **URL**
+
+    /api/user/:id
+
+* **Method:**
+
+    `PATCH`
+
+* **Headers:**
+
+    `'Content-Type': 'application/json'`
+
+
+* **Data Params**
+
+    ```typescript
+      {
+        name?: string | null,
+        leaderboardPosition?: number,
+        honor?: number,
+        clan?: string | null,
+        totalCompleted?: number,
+        rank?: string,
+        score?: number
+      }
+    ```
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:**
+    ```json
+      {
+        "status": "ok"
+      }
+    ```
+
+</details>
+
 **Get Comments**
 ----
 Returns json data about all comments for specified kata.
@@ -335,7 +381,7 @@ Returns json data about all comments for specified kata.
 
 * **URL**
 
-    /api/:id/discuss
+    /api/kata/:id/discuss
 
 * **Method:**
 
@@ -383,7 +429,7 @@ Creates new comment for specified kata.
 
 * **URL**
 
-    /api/:id/discuss
+    /api/kata/:id/discuss
 
 * **Method:**
 
@@ -440,7 +486,7 @@ Updates specified comment in a database.
 
 * **URL**
 
-    /api/:id/discuss/:commentId
+    /api/kata/:id/discuss/:commentId
 
 * **Method:**
 
@@ -472,5 +518,11 @@ Updates specified comment in a database.
 * **Success Response:**
 
   * **Code:** 200 <br />
+  **Content:**
+  ```json
+    {
+      "status": "ok"
+    }
+  ```
 
 </details>
