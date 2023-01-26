@@ -14,15 +14,17 @@ class DiscussController {
 
   async createComment(req, res, next) {
     try {
+      const { id } = req.params;
       const data = req.body;
 
       const comment = await Discuss.create({
-        kataId: data.kataId,
+        kataId: id,
         username: data.username,
         rank: data.rank,
         votes: 0,
         createdAt: new Date(Date.now()).toISOString(),
         spoiler: false,
+        text: data.text,
         label: data.label,
       });
 
@@ -36,6 +38,8 @@ class DiscussController {
     try {
       const { commentId } = req.params;
       const updates = req.body;
+
+      if (!Object.keys(updates).length) return res.json('No params to update');
 
       const comment = await Discuss.update(updates, {
         where: {
