@@ -25,6 +25,10 @@ Api for "RS Clone".
     - [Get Comments](https://github.com/hel-sidoruk/rs-clone-server#get-comments)
     - [Create Comment](https://github.com/hel-sidoruk/rs-clone-server#create-comment)
     - [Update Comment](https://github.com/hel-sidoruk/rs-clone-server#update-comment)
+- **Authorization**
+    - [Registration](https://github.com/hel-sidoruk/rs-clone-server#registration)
+    - [Login](https://github.com/hel-sidoruk/rs-clone-server#login)
+    - [Check](https://github.com/hel-sidoruk/rs-clone-server#check)
 
 **Get Katas**
 ----
@@ -524,5 +528,145 @@ Updates specified comment in a database.
       "status": "ok"
     }
   ```
+
+</details>
+
+**Registration**
+----
+Registrate new user. If user already in database or registered on Codewars returns an error.
+
+<details>
+
+* **URL**
+
+    /api/auth/registration
+
+* **Method:**
+
+    `POST`
+
+* **Headers:**
+
+    `'Content-Type': 'application/json'`
+
+* **Data Params**
+
+    ```typescript
+      {
+        username: string
+      }
+    ```
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+  **Content:**
+  ```typescript
+    {
+      "token": string
+    }
+  ```
+
+* **Error Response:**
+
+  * **Code:** 403 <br />
+      **Content:**
+
+      ```json
+        {
+          "message": "User with this name already exists"
+        }
+      ```
+
+</details>
+
+**Login**
+----
+Login user. If the user is not found in the database, searches for his profile on the site, and if it exists, add new user in database. Otherwise returns an error "User not found"
+
+<details>
+
+* **URL**
+
+    /api/auth/login
+
+* **Method:**
+
+    `POST`
+
+* **Headers:**
+
+    `'Content-Type': 'application/json'`
+
+* **Data Params**
+
+    ```typescript
+      {
+        username: string
+      }
+    ```
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+  **Content:**
+  ```typescript
+    {
+      "token": string
+    }
+  ```
+
+* **Error Response:**
+
+  * **Code:** 403 <br />
+      **Content:**
+
+      ```json
+        {
+          "message": "User not found"
+        }
+      ```
+
+
+</details>
+
+**Check**
+----
+Checks if the user is authorized.
+
+<details>
+
+* **URL**
+
+    /api/auth/check
+
+* **Method:**
+
+    `GET`
+
+* **Headers:**
+
+    `'Authorization': 'Bearer <token>'`
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+  **Content:**
+  ```typescript
+    {
+      "token": string
+    }
+  ```
+
+* **Error Response:**
+
+  * **Code:** 401 <br />
+      **Content:**
+
+      ```json
+        {
+          "message": "User is not authorized"
+        }
+      ```
 
 </details>
