@@ -41,13 +41,13 @@ class DiscussController {
 
       if (!Object.keys(updates).length) return res.json('No params to update');
 
-      const comment = await Discuss.update(updates, {
+      await Discuss.update(updates, {
         where: {
           id: commentId,
         },
       });
 
-      return res.json(comment);
+      return res.json({ status: 'ok' });
     } catch (e) {
       next(ApiError.badRequest(e.message));
     }

@@ -5,5 +5,6 @@ const router = new Router();
 router.post('/', UserController.create);
 router.get('/', UserController.getAll);
 router.get('/:id', UserController.getOne);
+router.patch('/:id', UserController.update);
 
 module.exports = router;
