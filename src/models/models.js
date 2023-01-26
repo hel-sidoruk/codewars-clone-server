@@ -49,7 +49,29 @@ const Users = sequelize.define(
   }
 );
 
+const Discuss = sequelize.define(
+  'discuss',
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true,
+    },
+    kataId: { type: DataTypes.STRING, allowNull: false },
+    username: { type: DataTypes.STRING, allowNull: false },
+    text: { type: DataTypes.TEXT, allowNull: false },
+    rank: { type: DataTypes.STRING, allowNull: false },
+    votes: { type: DataTypes.INTEGER, defaultValue: 0 },
+    createdAt: { type: DataTypes.DATE, allowNull: false },
+    spoiler: { type: DataTypes.BOOLEAN, defaultValue: false },
+    label: { type: DataTypes.STRING },
+  },
+  { timestamps: false }
+);
+
 module.exports = {
   Challenges,
   Users,
+  Discuss,
 };
