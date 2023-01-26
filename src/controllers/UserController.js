@@ -34,6 +34,25 @@ class UserController {
       next(ApiError.badRequest(e.message));
     }
   }
+
+  async update(req, res, next) {
+    try {
+      const { id } = req.params;
+      const updates = req.body;
+
+      if (!Object.keys(updates).length) return res.json('No params to update');
+
+      await Users.update(updates, {
+        where: {
+          id,
+        },
+      });
+
+      return res.json({ status: 'ok' });
+    } catch (e) {
+      next(ApiError.badRequest(e.message));
+    }
+  }
 }
 
 module.exports = new UserController();
