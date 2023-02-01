@@ -632,12 +632,6 @@ Login user. If the user not found in the database, returns an error.
 
 </details>
 
-**Check**
-----
-Checks if the user is authorized.
-
-<details>
-
 **Github Registration**
 ----
 Registrate new user with Github OAuth access token.
