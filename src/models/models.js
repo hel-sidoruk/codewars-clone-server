@@ -49,6 +49,20 @@ const Users = sequelize.define(
   }
 );
 
+const Accounts = sequelize.define(
+  'accounts',
+  {
+    id: { type: DataTypes.STRING, primaryKey: true, allowNull: false },
+    username: { type: DataTypes.STRING, allowNull: false, unique: true },
+    password: { type: DataTypes.STRING },
+    avatar: { type: DataTypes.STRING },
+    github: { type: DataTypes.STRING },
+  },
+  {
+    timestamps: false,
+  }
+);
+
 const Discuss = sequelize.define(
   'discuss',
   {
@@ -74,4 +88,5 @@ module.exports = {
   Challenges,
   Users,
   Discuss,
+  Accounts,
 };

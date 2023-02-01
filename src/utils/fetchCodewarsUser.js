@@ -7,7 +7,7 @@ async function fetchCodewarsUser(id) {
     const { data } = await axios.get(`${URL}/users/${id}`);
     return data;
   } catch (error) {
-    return { success: false };
+    return null;
   }
 }
 
