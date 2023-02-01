@@ -28,6 +28,8 @@ Api for "RS Clone".
 - **Authorization**
     - [Registration](https://github.com/hel-sidoruk/rs-clone-server#registration)
     - [Login](https://github.com/hel-sidoruk/rs-clone-server#login)
+    - [Github Registration](https://github.com/hel-sidoruk/rs-clone-server#github-registration)
+    - [Github Login](https://github.com/hel-sidoruk/rs-clone-server#github-login)
     - [Check](https://github.com/hel-sidoruk/rs-clone-server#check)
 
 **Get Katas**
@@ -533,7 +535,7 @@ Updates specified comment in a database.
 
 **Registration**
 ----
-Registrate new user. If user already in database or registered on Codewars returns an error.
+Registrate new user. If the user already exists in database returns an error. If you pass the same username as registered on Codewars, loads your profile data.
 
 <details>
 
@@ -582,7 +584,7 @@ Registrate new user. If user already in database or registered on Codewars retur
 
 **Login**
 ----
-Login user. If the user is not found in the database, searches for his profile on the site, and if it exists, add new user in database. Otherwise returns an error "User not found"
+Login user. If the user not found in the database, returns an error.
 
 <details>
 
@@ -624,6 +626,101 @@ Login user. If the user is not found in the database, searches for his profile o
       ```json
         {
           "message": "User not found"
+        }
+      ```
+
+
+</details>
+
+**Check**
+----
+Checks if the user is authorized.
+
+<details>
+
+**Github Registration**
+----
+Registrate new user with Github OAuth access token.
+
+<details>
+
+* **URL**
+
+    /api/auth/github-registration
+
+* **Method:**
+
+    `GET`
+
+*  **URL Params**
+
+    **Required:**
+
+    `code=[string]`
+    `option=registration`
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+  **Content:**
+  ```typescript
+    {
+      "token": string
+    }
+  ```
+
+* **Error Response:**
+
+  * **Code:** 401, 403 <br />
+      **Content:**
+
+      ```typescript
+        {
+          "message": string
+        }
+      ```
+
+</details>
+
+**Github Login**
+----
+Login user with Github OAuth access token.
+
+<details>
+
+* **URL**
+
+    /api/auth/github-login
+
+* **Method:**
+
+    `GET`
+
+*  **URL Params**
+
+    **Required:**
+
+    `code=[string]`
+    `option=login`
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+  **Content:**
+  ```typescript
+    {
+      "token": string
+    }
+  ```
+
+* **Error Response:**
+
+  * **Code:** 401, 403 <br />
+      **Content:**
+
+      ```typescript
+        {
+          "message": string
         }
       ```
 
