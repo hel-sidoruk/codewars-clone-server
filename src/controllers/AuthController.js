@@ -25,7 +25,7 @@ class AuthController {
 
     const codewarsUser = await fetchCodewarsUser(username);
     await Users.create({
-      id: codewarsUser ? codewarsUser.id : account.id,
+      id: codewarsUser ? codewarsUser.id : nanoid(),
       username: codewarsUser ? codewarsUser.username : username,
       honor: codewarsUser ? codewarsUser.honor : 0,
       totalCompleted: codewarsUser
