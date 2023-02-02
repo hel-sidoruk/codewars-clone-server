@@ -1,5 +1,5 @@
 const functionsToTest = {
-  pow: null,
+  simpleMultiplication: null,
 };
 
 module.exports = functionsToTest;
