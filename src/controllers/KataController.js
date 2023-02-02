@@ -3,8 +3,16 @@ const { Challenges } = require('../models/models');
 
 class KataController {
   async getAll(req, res) {
-    let challenges = await Challenges.findAll();
-    return res.json(challenges);
+    const { page } = req.query;
+    const limit = 10;
+    const offset = page * limit - limit;
+
+    let katas = await Challenges.findAndCountAll({
+      limit,
+      offset,
+    });
+
+    return res.json(katas);
   }
 
   async getOne(req, res) {
