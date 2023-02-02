@@ -12,10 +12,12 @@ const generateJwt = (username) => {
 class GithubAuthController {
   async registration(req, res, next) {
     const { login, avatar_url, id } = req.user;
-    const candidate = await Accounts.findOne({
-      where: { github: login },
-    });
-    if (candidate) return next(ApiError.forbidden('User already exists'));
+
+    const candidate = await Accounts.findOne({ where: { github: login } });
+    const candidateUsers = await Users.findOne({ where: { username: login } });
+    if (candidate || candidateUsers)
+      return next(ApiError.forbidden('User already exists'));
+
     try {
       const codewarsUser = await fetchCodewarsUser(login);
       await Users.create({

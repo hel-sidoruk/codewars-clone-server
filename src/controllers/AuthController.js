@@ -18,7 +18,8 @@ class AuthController {
     if (!password) return next(ApiError.unauthorized('Password is required'));
 
     const candidate = await Accounts.findOne({ where: { username } });
-    if (candidate)
+    const candidateUsers = await Users.findOne({ where: { username } });
+    if (candidate || candidateUsers)
       return next(ApiError.forbidden('User with this username already exists'));
 
     const hashPassword = await bcrypt.hash(password, 5);
