@@ -3,7 +3,9 @@ const { Users } = require('../models/models');
 
 class UserController {
   async getAll(req, res) {
-    const data = await Users.findAll();
+    const data = await Users.findAll({
+      order: [['leaderboardPosition', 'ASC']],
+    });
     return res.json(data);
   }
 
