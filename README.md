@@ -34,7 +34,7 @@ Api for "RS Clone".
 
 **Get Katas**
 ----
-Returns json data about all katas in a database.
+Returns json data about 10 katas in a database per page.
 
 <details>
 
@@ -52,7 +52,7 @@ Returns json data about all katas in a database.
 
 *  **URL Params**
 
-    None
+    `page=[number]`
 
 * **Success Response:**
 
