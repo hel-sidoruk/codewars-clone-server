@@ -9,7 +9,6 @@ const functionsToTest = require('../tests/functionsToTest');
 function onConnect(wsClient) {
   const mochaInstance = new Mocha();
   const stats = {
-    suites: 0,
     tests: 0,
     passes: 0,
     pending: 0,
@@ -17,26 +16,30 @@ function onConnect(wsClient) {
   };
 
   wsClient.on('message', (message) => {
-    const fn = new Function('return ' + message)();
-    const FN_NAME = 'simpleMultiplication';
+    const { functionName, solution } = JSON.parse(message);
+    const fn = new Function('return ' + solution)();
+    if (!Object.keys(functionsToTest).includes(functionName)) wsClient.close();
 
-    functionsToTest[FN_NAME] = fn;
-    mochaInstance.addFile(path.resolve(__dirname, `../tests/${FN_NAME}.js`));
+    functionsToTest[functionName] = fn;
+    mochaInstance.addFile(
+      path.resolve(__dirname, `../tests/${functionName}.js`)
+    );
     mochaInstance
       .run((failures) => {
-        if (failures) {
-          wsClient.send('-redFAILURES: ' + failures);
-          wsClient.send('--failure--');
-        }
-        if (!failures) wsClient.send('--success--');
+        if (failures) wsClient.send('--failure--');
+        else wsClient.send('--success--');
         wsClient.close();
       })
       .on('start', () => {
         stats.start = new Date();
       })
       .on('suite', (suite) => {
-        wsClient.send('-greenSUITE ' + suite.title);
-        suite.root || stats.suites++;
+        if (suite.title) {
+          wsClient.send('--suite-start--' + suite.title);
+        }
+      })
+      .on('suite end', (suite) => {
+        if (suite.title) wsClient.send('--suite-end--');
       })
       .on('pending', () => {
         stats.pending++;
@@ -61,7 +64,7 @@ function onConnect(wsClient) {
         wsClient.send('--stats--' + JSON.stringify(stats));
         wsClient.send('Completed in ' + stats.duration + 'ms');
         mochaInstance.unloadFiles();
-        functionsToTest[FN_NAME] = null;
+        functionsToTest[functionName] = null;
       });
   });
   wsClient.on('close', function () {
