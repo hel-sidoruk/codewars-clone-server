@@ -7,7 +7,7 @@ const TESTS_DIR = path.join(__dirname, '../tests');
 
 async function createTestsFiles() {
   const existingFiles = await readdir(TESTS_DIR, { withFileTypes: true });
-  const challenges = await Challenges.findAll();
+  const challenges = await Challenges.findAll({ limit: 20, offset: 20 });
   const existingTests = existingFiles
     .map((el) => el.name.replace('.js', ''))
     .filter((file) => file.match(/\d+/));
@@ -21,8 +21,9 @@ async function createTestsFiles() {
 
   const idsArray = Object.keys(katasByID);
   idsArray.forEach((id) => {
-    // const content = newTest(id, toCamelCase(katasByID[id]));
-    // writeTestFile(id, content);
+    // console.log(katasByID[id], toCamelCase(katasByID[id]));
+    const content = newTest(id, toCamelCase(katasByID[id]));
+    writeTestFile(id, content);
   });
 }
 
