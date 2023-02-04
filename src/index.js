@@ -8,7 +8,6 @@ const cors = require('cors');
 const router = require('./routes/index');
 const errorHandler = require('./middleware/ErrorHandlingMiddleware');
 const { wsServer, onConnect } = require('./ws/webSocket');
-const { createTestsFiles } = require('./utils/createTestsFiles');
 
 app.use(cors());
 app.use(express.json());
@@ -17,8 +16,6 @@ app.use('/api', router);
 app.use(errorHandler);
 
 wsServer.on('connection', onConnect);
-
-// createTestsFiles();
 
 const start = async () => {
   try {
@@ -30,4 +27,4 @@ const start = async () => {
   }
 };
 
-// start();
+start();

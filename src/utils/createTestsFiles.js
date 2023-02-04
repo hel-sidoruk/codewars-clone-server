@@ -7,7 +7,7 @@ const TESTS_DIR = path.join(__dirname, '../tests');
 
 async function createTestsFiles() {
   const existingFiles = await readdir(TESTS_DIR, { withFileTypes: true });
-  const challenges = await Challenges.findAll({ limit: 20, offset: 20 });
+  const challenges = await Challenges.findAll();
   const existingTests = existingFiles
     .map((el) => el.name.replace('.js', ''))
     .filter((file) => file.match(/\d+/));
@@ -17,11 +17,8 @@ async function createTestsFiles() {
     if (!existingTests.includes(el.id)) katasByID[el.id] = el.name;
   });
 
-  console.log(katasByID);
-
   const idsArray = Object.keys(katasByID);
   idsArray.forEach((id) => {
-    // console.log(katasByID[id], toCamelCase(katasByID[id]));
     const content = newTest(id, toCamelCase(katasByID[id]));
     writeTestFile(id, content);
   });
@@ -35,7 +32,7 @@ function writeTestFile(id, content) {
 function toCamelCase(str) {
   const newStr = str
     .split(' ')
-    .map((el) => el[0].toUpperCase() + el.slice(1))
+    .map((el) => (el[0] ? el[0].toUpperCase() + el.slice(1) : ''))
     .join('')
     .replaceAll(/[^a-z\d]/gi, '');
   return newStr[0].toLowerCase() + newStr.slice(1);
