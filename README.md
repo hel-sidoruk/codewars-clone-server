@@ -977,6 +977,14 @@ Add kata id to trainedKatas array. Returns error if user is not authorized
 
     `'Authorization': 'Bearer <token>'`
 
+* **Data Params**
+
+    ```typescript
+      {
+        kataId: string
+      }
+    ```
+
 * **Success Response:**
 
   * **Code:** 200 <br />
@@ -986,14 +994,6 @@ Add kata id to trainedKatas array. Returns error if user is not authorized
       "status": "ok"
     }
   ```
-
-* **Data Params**
-
-    ```typescript
-      {
-        kataId: string
-      }
-    ```
 
 * **Error Response:**
 
