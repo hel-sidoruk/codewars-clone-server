@@ -35,6 +35,10 @@ Api for "RS Clone".
     - [Github Registration](https://github.com/hel-sidoruk/rs-clone-server#github-registration)
     - [Github Login](https://github.com/hel-sidoruk/rs-clone-server#github-login)
     - [Check](https://github.com/hel-sidoruk/rs-clone-server#check)
+- **Account**
+    - [Get Account info](https://github.com/hel-sidoruk/rs-clone-server#get-account-info)
+    - [Add trained kata](https://github.com/hel-sidoruk/rs-clone-server#add-trained-kata)
+    - [Add solved kata](https://github.com/hel-sidoruk/rs-clone-server#add-solved-kata)
 
 **Get Katas**
 ----
@@ -891,6 +895,152 @@ Checks if the user is authorized.
   ```typescript
     {
       "token": string
+    }
+  ```
+
+* **Error Response:**
+
+  * **Code:** 401 <br />
+      **Content:**
+
+      ```json
+        {
+          "message": "User is not authorized"
+        }
+      ```
+
+</details>
+
+**Get Account info**
+----
+Returns json data about registered account. Returns error if user is not authorized
+
+<details>
+
+* **URL**
+
+    /api/account
+
+* **Method:**
+
+    `GET`
+
+* **Headers:**
+
+    `'Authorization': 'Bearer <token>'`
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+  **Content:**
+  ```json
+    {
+      "id": "105039101",
+      "username": "hel-sidoruk",
+      "password": null,
+      "avatar": "https://avatars.githubusercontent.com/u/105039101?v=4",
+      "github": "hel-sidoruk",
+      "solvedKatas": [
+        "583710ccaa6717322c000105"
+      ],
+      "trainedKatas": []
+    }
+  ```
+* **Error Response:**
+
+  * **Code:** 401 <br />
+      **Content:**
+
+      ```json
+        {
+          "message": "User is not authorized"
+        }
+      ```
+
+</details>
+
+**Add trained kata**
+----
+Add kata id to trainedKatas array. Returns error if user is not authorized
+
+<details>
+
+* **URL**
+
+    /api/account/trained
+
+* **Method:**
+
+    `PATCH`
+
+* **Headers:**
+
+    `'Authorization': 'Bearer <token>'`
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+  **Content:**
+  ```json
+    {
+      "status": "ok"
+    }
+  ```
+
+* **Data Params**
+
+    ```typescript
+      {
+        kataId: string
+      }
+    ```
+
+* **Error Response:**
+
+  * **Code:** 401 <br />
+      **Content:**
+
+      ```json
+        {
+          "message": "User is not authorized"
+        }
+      ```
+
+</details>
+
+**Add solved kata**
+----
+Add kata id to solvedKatas array. Returns error if user is not authorized
+
+<details>
+
+* **URL**
+
+    /api/account/solved
+
+* **Method:**
+
+    `PATCH`
+
+* **Headers:**
+
+    `'Authorization': 'Bearer <token>'`
+
+* **Data Params**
+
+    ```typescript
+      {
+        kataId: string
+      }
+    ```
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+  **Content:**
+  ```json
+    {
+      "status": "ok"
     }
   ```
 
