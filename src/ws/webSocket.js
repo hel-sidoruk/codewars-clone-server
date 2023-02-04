@@ -16,14 +16,22 @@ function onConnect(wsClient) {
   };
 
   wsClient.on('message', (message) => {
-    const { functionName, solution } = JSON.parse(message);
+    const { kataId, solution } = JSON.parse(message);
     const fn = new Function('return ' + solution)();
-    if (!Object.keys(functionsToTest).includes(functionName)) wsClient.close();
+    if (!Object.keys(functionsToTest).includes(kataId)) {
+      wsClient.send('NO TESTS FOR THIS KATA');
+      wsClient.close();
+      return;
+    }
 
-    functionsToTest[functionName] = fn;
-    mochaInstance.addFile(
-      path.resolve(__dirname, `../tests/${functionName}.js`)
-    );
+    if (!(typeof fn === 'function')) {
+      wsClient.send('THIS IS NOT A FUNCTION');
+      wsClient.close();
+      return;
+    }
+
+    functionsToTest[kataId] = fn;
+    mochaInstance.addFile(path.resolve(__dirname, `../tests/${kataId}.js`));
     mochaInstance
       .run((failures) => {
         if (failures) wsClient.send('--failure--');
@@ -64,7 +72,7 @@ function onConnect(wsClient) {
         wsClient.send('--stats--' + JSON.stringify(stats));
         wsClient.send('Completed in ' + stats.duration + 'ms');
         mochaInstance.unloadFiles();
-        functionsToTest[functionName] = null;
+        functionsToTest[kataId] = null;
       });
   });
   wsClient.on('close', function () {
