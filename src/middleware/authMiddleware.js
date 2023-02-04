@@ -11,6 +11,6 @@ module.exports = function (req, res, next) {
     req.user = decoded;
     next();
   } catch (e) {
-    return ApiError.unauthorized('User is not authorized');
+    return next(ApiError.unauthorized('User is not authorized'));
   }
 };

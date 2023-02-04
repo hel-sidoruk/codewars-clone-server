@@ -57,6 +57,8 @@ const Accounts = sequelize.define(
     password: { type: DataTypes.STRING },
     avatar: { type: DataTypes.STRING },
     github: { type: DataTypes.STRING },
+    solvedKatas: { type: DataTypes.ARRAY(DataTypes.STRING) },
+    trainedKatas: { type: DataTypes.ARRAY(DataTypes.STRING) },
   },
   {
     timestamps: false,
