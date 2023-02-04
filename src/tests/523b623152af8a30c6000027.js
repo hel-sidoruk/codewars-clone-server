@@ -1,23 +1,27 @@
 const { assert } = require('chai');
 const { describe, it } = require('mocha');
 const functionsToTest = require('./functionsToTest');
+const _ = require('lodash');
 
 const function2SquaringAnArgument = functionsToTest['523b623152af8a30c6000027'];
 
-describe('', () => {
-  it('', () => {
-    assert.strictEqual(function2SquaringAnArgument(), '');
+describe('Sample tests', () => {
+  it('2 squared equals 4', () => {
+    assert.strictEqual(function2SquaringAnArgument(2), 4);
   });
-  it('', () => {
-    assert.strictEqual(function2SquaringAnArgument(), '');
+  it('3 squared equals 9', () => {
+    assert.strictEqual(function2SquaringAnArgument(3), 9);
   });
-  it('', () => {
-    assert.strictEqual(function2SquaringAnArgument(), '');
+  it('4 squared equals 16', () => {
+    assert.strictEqual(function2SquaringAnArgument(4), 16);
   });
-  it('', () => {
-    assert.strictEqual(function2SquaringAnArgument(), '');
-  });
-  it('', () => {
-    assert.strictEqual(function2SquaringAnArgument(), '');
-  });
+});
+
+describe('Random tests', function () {
+  for (let i = 0; i < 15; i++) {
+    let x = _.random(1, 100);
+    it(`Should return ${x * x} for ${x}`, () => {
+      assert.strictEqual(function2SquaringAnArgument(x), x * x);
+    });
+  }
 });
