@@ -10,7 +10,7 @@ class SolutionsController {
     return res.json(solutions);
   }
 
-  async creatSolution(req, res, next) {
+  async addSolution(req, res, next) {
     try {
       const { kataId } = req.params;
       const data = req.body;
