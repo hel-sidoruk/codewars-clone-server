@@ -1,3 +1,4 @@
+const { nanoid } = require('nanoid');
 const ApiError = require('../error/ApiError');
 const { Solutions } = require('../models/models');
 
@@ -16,6 +17,7 @@ class SolutionsController {
       const data = req.body;
 
       const solution = await Solutions.create({
+        id: nanoid(),
         kataId,
         username: data.username,
         solution: data.solution,
