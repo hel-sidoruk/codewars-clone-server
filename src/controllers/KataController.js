@@ -3,7 +3,8 @@ const { Challenges } = require('../models/models');
 
 class KataController {
   async getAll(req, res) {
-    const { page } = req.query;
+    let { page } = req.query;
+    if (!page) page = 1;
     const limit = 10;
     const offset = page * limit - limit;
 

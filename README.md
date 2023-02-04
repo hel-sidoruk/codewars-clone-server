@@ -25,6 +25,10 @@ Api for "RS Clone".
     - [Get Comments](https://github.com/hel-sidoruk/rs-clone-server#get-comments)
     - [Create Comment](https://github.com/hel-sidoruk/rs-clone-server#create-comment)
     - [Update Comment](https://github.com/hel-sidoruk/rs-clone-server#update-comment)
+- **Solutions**
+    - [Get Solutions](https://github.com/hel-sidoruk/rs-clone-server#get-solutions)
+    - [Add Solution](https://github.com/hel-sidoruk/rs-clone-server#add-solution)
+    - [Update Solution](https://github.com/hel-sidoruk/rs-clone-server#update-solution)
 - **Authorization**
     - [Registration](https://github.com/hel-sidoruk/rs-clone-server#registration)
     - [Login](https://github.com/hel-sidoruk/rs-clone-server#login)
@@ -518,6 +522,147 @@ Updates specified comment in a database.
         votes?: number,
         spoiler?: boolean,
         text?: string,
+      }
+    ```
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+  **Content:**
+  ```json
+    {
+      "status": "ok"
+    }
+  ```
+
+</details>
+
+**Get Solutions**
+----
+Returns json data about all solutions for specified kata.
+
+<details>
+
+* **URL**
+
+    /api/kata/:kataId/solutions
+
+* **Method:**
+
+    `GET`
+
+* **Headers:**
+
+    None
+
+*  **URL Params**
+
+    **Required:**
+
+    `kataId=[string]`
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:**
+    ```json
+      [
+        {
+          "id": "wF6meI4by4fWPHEP5lwPX",
+          "kataId": "583710ccaa6717322c000105",
+          "username": "hel-sidoruk",
+          "solution": "function simpleMultiplication(number) {\nreturn number % 2 === 0 ? number * 8 : number * 9\n}",
+          "createdAt": "2023-02-04T09:52:20.745Z",
+          "cleverVotes": 1,
+          "bestPracticesVotes": 0
+        }
+      ]
+    ```
+
+</details>
+
+**Add Solution**
+----
+Creates new solution for specified kata.
+
+<details>
+
+* **URL**
+
+    /api/kata/:kataId/solutions
+
+* **Method:**
+
+    `POST`
+
+* **Headers:**
+
+    `'Content-Type': 'application/json'`
+
+*  **URL Params**
+
+    **Required:**
+
+    `kataId=[string]`
+
+* **Data Params**
+
+    ```typescript
+      {
+        username: string,
+        solution: string,
+      }
+    ```
+
+* **Success Response:**
+
+  * **Code:** 200 OK <br />
+    **Content:**
+    ```json
+      {
+        "id": "wF6meI4by4fWPHEP5lwPX",
+        "kataId": "583710ccaa6717322c000105",
+        "username": "hel-sidoruk",
+        "solution": "function simpleMultiplication(number) {\nreturn number % 2 === 0 ? number * 8 : number * 9\n}",
+        "createdAt": "2023-02-04T09:52:20.745Z",
+        "cleverVotes": 0,
+        "bestPracticesVotes": 0
+      }
+    ```
+
+</details>
+
+**Update Solution**
+----
+Updates specified solution in a database.
+
+<details>
+
+* **URL**
+
+    /api/kata/:kataId/solutions/:solutionId
+
+* **Method:**
+
+    `PATCH`
+
+* **Headers:**
+
+    `'Content-Type': 'application/json'`
+
+*  **URL Params**
+
+    **Required:**
+
+    `kataId=[string]`
+    `solutionId=[string]`
+
+* **Data Params**
+
+    ```typescript
+      {
+        cleverVotes?: number,
+        bestPracticesVotes?: number,
       }
     ```
 

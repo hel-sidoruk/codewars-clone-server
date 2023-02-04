@@ -84,9 +84,24 @@ const Discuss = sequelize.define(
   { timestamps: false }
 );
 
+const Solutions = sequelize.define(
+  'solutions',
+  {
+    id: { type: DataTypes.STRING, primaryKey: true, allowNull: false },
+    kataId: { type: DataTypes.STRING, allowNull: false },
+    username: { type: DataTypes.STRING, allowNull: false },
+    solution: { type: DataTypes.TEXT, allowNull: false },
+    createdAt: { type: DataTypes.DATE, allowNull: false },
+    cleverVotes: { type: DataTypes.INTEGER, defaultValue: 0 },
+    bestPracticesVotes: { type: DataTypes.INTEGER, defaultValue: 0 },
+  },
+  { timestamps: false }
+);
+
 module.exports = {
   Challenges,
   Users,
   Discuss,
   Accounts,
+  Solutions,
 };
