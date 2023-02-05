@@ -2,7 +2,7 @@ const { assert } = require('chai');
 const { describe, it } = require('mocha');
 const functionsToTest = require('./functionsToTest');
 
-const simpleMultiplication = functionsToTest.simpleMultiplication;
+const simpleMultiplication = functionsToTest['583710ccaa6717322c000105'];
 
 describe('Basic Tests', () => {
   it('Should return given argument times eight...', () => {
