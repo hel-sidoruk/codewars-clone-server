@@ -1,22 +1,11 @@
-const { assert } = require('chai');
 const { describe, it } = require('mocha');
 const functionsToTest = require('./functionsToTest');
+const Test = require('@codewars/test-compat');
 
 const getDecimal = functionsToTest['586e4c61aa0428f04e000069'];
 
 describe('getDecimal', function () {
   let assertFuzzyEquals = function (actual, expected, msg) {
-    // Note: we can use absolute error testing here
-    // since the range of the numbers is -5e3 to 5e3.
-    //
-    // Since double values have 15 significant digits,
-    // we could go up to around 1e-12 here, but due to
-    // string handling and other shenengians, it's better
-    // to stay safe and use 1e-7, before users start yelling.
-    //
-    // See the section "Handle floating point values the right way"
-    // in the codex for more information.
-    // -- bkaestner
     let inrange = Math.abs(actual - expected) <= 1e-7;
     Test.expect(
       inrange,

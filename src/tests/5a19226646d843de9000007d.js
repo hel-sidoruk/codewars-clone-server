@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 const { assert } = require('chai');
 const { describe, it } = require('mocha');
 const functionsToTest = require('./functionsToTest');
@@ -35,7 +36,6 @@ describe('Fixed Tests', () => {
 
 describe('Random Tests', () => {
   function countConsonantsCheck(str) {
-    let consCount = 0;
     let consArr = [];
     let temp = [];
     str = str.replace(/[^A-Za-z]/g, '').toLowerCase();

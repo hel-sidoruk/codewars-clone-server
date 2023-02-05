@@ -12,26 +12,26 @@ let rTests = 10;
 
 describe('Tests using hard-coded strings', function () {
   it('Should return number of consonants in string', function () {
-    Test.assertEquals(consonantCount(''), 0, 'Test string is empty string');
-    Test.assertEquals(consonantCount('aaaaa'), 0, 'Test string: "aaaaa"');
-    Test.assertEquals(consonantCount('XaeiouX'), 2, 'Test string: "XaeiouX"');
-    Test.assertEquals(consonantCount('Bbbbb'), 5, 'Test string: "Bbbbb"');
-    Test.assertEquals(
+    assert.strictEqual(consonantCount(''), 0, 'Test string is empty string');
+    assert.strictEqual(consonantCount('aaaaa'), 0, 'Test string: "aaaaa"');
+    assert.strictEqual(consonantCount('XaeiouX'), 2, 'Test string: "XaeiouX"');
+    assert.strictEqual(consonantCount('Bbbbb'), 5, 'Test string: "Bbbbb"');
+    assert.strictEqual(
       consonantCount('helLo world'),
       7,
       'Test string: "helLo world"'
     );
-    Test.assertEquals(
+    assert.strictEqual(
       consonantCount('h^$&^#$&^elLo world'),
       7,
       'Test string: "h^$&^#$&^elLo world"'
     );
-    Test.assertEquals(
+    assert.strictEqual(
       consonantCount('0123456789'),
       0,
       'Test string: "0123456789"'
     );
-    Test.assertEquals(
+    assert.strictEqual(
       consonantCount('012345_Cb'),
       2,
       'Test string: "012345_Cb"'
@@ -40,27 +40,23 @@ describe('Tests using hard-coded strings', function () {
 });
 
 describe('Tests using randomly generated strings', function () {
-  it('Should return number of consonants in string', function () {
-    while (rTests--) {
-      let rTestStr = '',
-        numV = Math.floor(Math.random() * limit),
-        numC = Math.floor(Math.random() * limit),
-        testC = numC;
-      while (numV--) {
-        let indV = Math.floor(Math.random() * 5),
-          vowel = vowels[indV];
-        rTestStr += vowel;
-      }
-      while (numC--) {
-        let indC = Math.floor(Math.random() * 21),
-          consonant = consonants[indC];
-        rTestStr += consonant;
-      }
-      Test.assertEquals(
-        consonantCount(rTestStr),
-        testC,
-        'Test string: "' + rTestStr + '"'
-      );
+  while (rTests--) {
+    let rTestStr = '',
+      numV = Math.floor(Math.random() * limit),
+      numC = Math.floor(Math.random() * limit),
+      testC = numC;
+    while (numV--) {
+      let indV = Math.floor(Math.random() * 5),
+        vowel = vowels[indV];
+      rTestStr += vowel;
     }
-  });
+    while (numC--) {
+      let indC = Math.floor(Math.random() * 21),
+        consonant = consonants[indC];
+      rTestStr += consonant;
+    }
+    it('Test string: "' + rTestStr + '"', function () {
+      assert.strictEqual(consonantCount(rTestStr), testC);
+    });
+  }
 });

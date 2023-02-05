@@ -1,6 +1,6 @@
-const { assert } = require('chai');
 const { describe, it } = require('mocha');
 const functionsToTest = require('./functionsToTest');
+const Test = require('@codewars/test-compat');
 
 const spread = functionsToTest['540de1f0716ab384b4000828'];
 

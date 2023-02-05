@@ -5,39 +5,39 @@ const functionsToTest = require('./functionsToTest');
 const nicknameGenerator = functionsToTest['593b1909e68ff627c9000186'];
 
 describe('Example Test Cases', function () {
-  Test.assertEquals(nicknameGenerator('Jimmy'), 'Jim');
-  Test.assertEquals(nicknameGenerator('Samantha'), 'Sam');
-  Test.assertEquals(nicknameGenerator('Sam'), 'Error: Name too short');
-  Test.assertEquals(nicknameGenerator('Kayne'), 'Kay', "'y' is not a vowel");
-  Test.assertEquals(nicknameGenerator('Melissa'), 'Mel');
-  Test.assertEquals(nicknameGenerator('James'), 'Jam');
+  assert.strictEqual(nicknameGenerator('Jimmy'), 'Jim');
+  assert.strictEqual(nicknameGenerator('Samantha'), 'Sam');
+  assert.strictEqual(nicknameGenerator('Sam'), 'Error: Name too short');
+  assert.strictEqual(nicknameGenerator('Kayne'), 'Kay', "'y' is not a vowel");
+  assert.strictEqual(nicknameGenerator('Melissa'), 'Mel');
+  assert.strictEqual(nicknameGenerator('James'), 'Jam');
 });
 
 describe('Basic Test Cases', function () {
   it('Correct Names (General)', function () {
-    Test.assertEquals(nicknameGenerator('Gregory'), 'Greg');
-    Test.assertEquals(nicknameGenerator('Jeannie'), 'Jean');
-    Test.assertEquals(nicknameGenerator('Kimberly'), 'Kim');
-    Test.assertEquals(nicknameGenerator('Timothy'), 'Tim');
-    Test.assertEquals(nicknameGenerator('Dani'), 'Dan');
+    assert.strictEqual(nicknameGenerator('Gregory'), 'Greg');
+    assert.strictEqual(nicknameGenerator('Jeannie'), 'Jean');
+    assert.strictEqual(nicknameGenerator('Kimberly'), 'Kim');
+    assert.strictEqual(nicknameGenerator('Timothy'), 'Tim');
+    assert.strictEqual(nicknameGenerator('Dani'), 'Dan');
   });
 
   it('Correct Names (Vowel Checking)', function () {
-    Test.assertEquals(nicknameGenerator('Saamy'), 'Saam');
-    Test.assertEquals(nicknameGenerator('Saemy'), 'Saem');
-    Test.assertEquals(nicknameGenerator('Saimy'), 'Saim');
-    Test.assertEquals(nicknameGenerator('Saomy'), 'Saom');
-    Test.assertEquals(nicknameGenerator('Saumy'), 'Saum');
+    assert.strictEqual(nicknameGenerator('Saamy'), 'Saam');
+    assert.strictEqual(nicknameGenerator('Saemy'), 'Saem');
+    assert.strictEqual(nicknameGenerator('Saimy'), 'Saim');
+    assert.strictEqual(nicknameGenerator('Saomy'), 'Saom');
+    assert.strictEqual(nicknameGenerator('Saumy'), 'Saum');
 
-    Test.assertEquals(nicknameGenerator('Boyna'), 'Boy', "'y' is not a vowel");
-    Test.assertEquals(nicknameGenerator('Kiyna'), 'Kiy', "'y' is not a vowel");
-    Test.assertEquals(nicknameGenerator('Sayma'), 'Say', "'y' is not a vowel");
+    assert.strictEqual(nicknameGenerator('Boyna'), 'Boy', "'y' is not a vowel");
+    assert.strictEqual(nicknameGenerator('Kiyna'), 'Kiy', "'y' is not a vowel");
+    assert.strictEqual(nicknameGenerator('Sayma'), 'Say', "'y' is not a vowel");
   });
 
   it('Incorrect Names (Too Short)', function () {
-    Test.assertEquals(nicknameGenerator('Ni'), 'Error: Name too short');
-    Test.assertEquals(nicknameGenerator('Jam'), 'Error: Name too short');
-    Test.assertEquals(nicknameGenerator('Suv'), 'Error: Name too short');
+    assert.strictEqual(nicknameGenerator('Ni'), 'Error: Name too short');
+    assert.strictEqual(nicknameGenerator('Jam'), 'Error: Name too short');
+    assert.strictEqual(nicknameGenerator('Suv'), 'Error: Name too short');
   });
 });
 
@@ -80,7 +80,8 @@ describe('Random Test Cases', function () {
     let dupString = randomName.slice();
     let expected = nicknameGeneratorCheck(randomName);
     let actual = nicknameGenerator(randomName);
-
-    Test.assertEquals(actual, expected, `Input: '${dupString}'`);
+    it(`Input: '${dupString}'`, () => {
+      assert.strictEqual(actual, expected);
+    });
   }
 });

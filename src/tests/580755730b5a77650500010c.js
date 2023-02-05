@@ -1,11 +1,12 @@
+/* eslint-disable no-constant-condition */
 const { assert } = require('chai');
 const { describe, it } = require('mocha');
 const functionsToTest = require('./functionsToTest');
 
 const sortMyString = functionsToTest['580755730b5a77650500010c'];
 
-describe('Other Tests', function () {
-  it('Static Ones', function () {
+describe('Static Tests', function () {
+  it('tests', function () {
     assert.strictEqual(
       sortMyString('Wolfeschlegelsteinhausenbergerdorff'),
       'Wleclgltihuebredrf ofsheesenasnegrof'
@@ -28,7 +29,8 @@ describe('Other Tests', function () {
     );
     assert.strictEqual(sortMyString('SUBDERMATOGLYPHIC'), 'SBEMTGYHC UDRAOLPI');
   });
-
+});
+describe('More Complex Ones (random)', function () {
   function sortMyStringCheck(S) {
     let g1 = '',
       g2 = '',
@@ -49,30 +51,27 @@ describe('Other Tests', function () {
     let rand = arr[Math.floor(Math.random() * arr.length)];
     return rand;
   }
-
-  describe('More Complex Ones (random)', function () {
-    let alph = 'abcdefghijklmnopqrstuvwxyz';
-    let alph_ = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    let digStr = '0123456789';
-    let greatSL = alph.concat(alph_).concat(digStr).split('');
-    for (let h = 0; h <= 20; h++) {
-      let len = randint(10, 50);
-      let S = '';
-      while (true) {
-        let char = choice(greatSL);
-        S += char;
-        if (S.length == len) break;
-      }
-      let result = sortMyStringCheck(S).split(' ');
-      let evenPredict = result[0],
-        oddPredict = result[1];
-      let res = sortMyString(S).split(' ');
-      let evenExpect = res[0],
-        oddExpect = res[1];
-      it('Testing for = ' + S, function () {
-        assert.strictEqual(evenExpect, evenPredict);
-        assert.strictEqual(oddExpect, oddPredict);
-      });
+  let alph = 'abcdefghijklmnopqrstuvwxyz';
+  let alph_ = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let digStr = '0123456789';
+  let greatSL = alph.concat(alph_).concat(digStr).split('');
+  for (let h = 0; h <= 20; h++) {
+    let len = randint(10, 50);
+    let S = '';
+    while (true) {
+      let char = choice(greatSL);
+      S += char;
+      if (S.length == len) break;
     }
-  });
+    let result = sortMyStringCheck(S).split(' ');
+    let evenPredict = result[0],
+      oddPredict = result[1];
+    let res = sortMyString(S).split(' ');
+    let evenExpect = res[0],
+      oddExpect = res[1];
+    it('Testing for = ' + S, function () {
+      assert.strictEqual(evenExpect, evenPredict);
+      assert.strictEqual(oddExpect, oddPredict);
+    });
+  }
 });

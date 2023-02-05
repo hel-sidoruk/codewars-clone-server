@@ -4,11 +4,11 @@ const functionsToTest = require('./functionsToTest');
 
 const toWeirdCase = functionsToTest['52b757663a95b11b3d00062d'];
 
-describe('toWeirdCase', function () {
-  it('should return the correct value for a single word', function () {
-    let words = ['This', 'is', 'a', 'test', 'Looks', 'like', 'you', 'passed'];
-    for (let i = 0; i < words.length; i++) {
-      Test.assertEquals(
+describe('should return the correct value for a single word', function () {
+  let words = ['This', 'is', 'a', 'test', 'Looks', 'like', 'you', 'passed'];
+  for (let i = 0; i < words.length; i++) {
+    it('Word = ' + words[i], function () {
+      assert.strictEqual(
         toWeirdCase(words[i]),
         words[i]
           .toLowerCase()
@@ -23,19 +23,21 @@ describe('toWeirdCase', function () {
           })
           .join(' ')
       );
-    }
-  });
+    });
+  }
+});
 
-  it('should return the correct value for multiple words', function () {
-    let sentences = [
-      'This is a test',
-      'Looks like you passed',
-      'This is the final test case',
-      'Just kidding',
-      'Ok fine you are done now',
-    ];
-    for (let i = 0; i < sentences.length; i++) {
-      Test.assertEquals(
+describe('should return the correct value for multiple words', function () {
+  let sentences = [
+    'This is a test',
+    'Looks like you passed',
+    'This is the final test case',
+    'Just kidding',
+    'Ok fine you are done now',
+  ];
+  for (let i = 0; i < sentences.length; i++) {
+    it('String = ' + sentences[i], function () {
+      assert.strictEqual(
         toWeirdCase(sentences[i]),
         sentences[i]
           .toLowerCase()
@@ -50,6 +52,6 @@ describe('toWeirdCase', function () {
           })
           .join(' ')
       );
-    }
-  });
+    });
+  }
 });

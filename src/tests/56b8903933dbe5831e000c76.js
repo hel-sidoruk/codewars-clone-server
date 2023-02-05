@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 const { assert } = require('chai');
 const { describe, it } = require('mocha');
 const functionsToTest = require('./functionsToTest');

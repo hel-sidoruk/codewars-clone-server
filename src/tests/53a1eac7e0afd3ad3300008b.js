@@ -15,8 +15,8 @@ for (let i = 0; i < 10; i++) {
 }
 
 describe('Checking the first 10 integers in sequence...', function () {
-  Test.assertEquals(f_arr.toString(), '1,1,2,2,3,3,4,5,5,6');
-  Test.assertEquals(m_arr.toString(), '0,0,1,2,2,3,4,4,5,6');
+  assert.strictEqual(f_arr.toString(), '1,1,2,2,3,3,4,5,5,6');
+  assert.strictEqual(m_arr.toString(), '0,0,1,2,2,3,4,4,5,6');
 });
 
 for (let i = 10; i < 25; i++) {
@@ -25,11 +25,11 @@ for (let i = 10; i < 25; i++) {
 }
 
 describe('Checking the first 25 integers in sequence...', function () {
-  Test.assertEquals(
+  assert.strictEqual(
     f_arr.toString(),
     '1,1,2,2,3,3,4,5,5,6,6,7,8,8,9,9,10,11,11,12,13,13,14,14,15'
   );
-  Test.assertEquals(
+  assert.strictEqual(
     m_arr.toString(),
     '0,0,1,2,2,3,4,4,5,6,6,7,7,8,9,9,10,11,11,12,12,13,14,14,15'
   );

@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 const { assert } = require('chai');
 const { describe, it } = require('mocha');
 const functionsToTest = require('./functionsToTest');
@@ -19,8 +20,8 @@ describe('vowelOne', () => {
 
 describe('Random tests', () => {
   let rnd = (x) => (x ? ~~(Math.random() * x) : Math.random()),
-    rndBin = (_) => rnd(1e9).toString(2),
-    rndVow = (_) => 'aeiouAEIOU'[rnd(10)],
+    rndBin = () => rnd(1e9).toString(2),
+    rndVow = () => 'aeiouAEIOU'[rnd(10)],
     rndCon = (c) =>
       /[aeiou]/i.test((c = String.fromCharCode(32 + rnd(95)))) ? rndCon() : c,
     rndStr = (b) =>

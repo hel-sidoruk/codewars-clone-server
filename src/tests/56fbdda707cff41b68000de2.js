@@ -1,8 +1,9 @@
 const { assert } = require('chai');
 const { describe, it } = require('mocha');
 const functionsToTest = require('./functionsToTest');
+const Test = require('@codewars/test-compat');
 
-const cuboidsCubesAndGetters = functionsToTest['56fbdda707cff41b68000de2'];
+const Cuboid = functionsToTest['56fbdda707cff41b68000de2'];
 
 //! здесь тестим класс Cuboid и его методы
 

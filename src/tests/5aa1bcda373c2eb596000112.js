@@ -31,7 +31,7 @@ describe('Basic tests', () => {
         .reduce((a, b) => a + b);
 
     for (let i = 0; i < 40; i++) {
-      const n = Array.from({ length: randint(3, 200) }, (_) =>
+      const n = Array.from({ length: randint(3, 200) }, () =>
         randint(
           -randint(1, Math.pow(10, randint(1, 5))),
           randint(1, Math.pow(10, randint(1, 5)))

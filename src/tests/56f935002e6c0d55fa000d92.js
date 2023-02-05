@@ -1,8 +1,9 @@
 const { assert } = require('chai');
 const { describe, it } = require('mocha');
+const Test = require('@codewars/test-compat');
 const functionsToTest = require('./functionsToTest');
 
-const animalsAndInheritance = functionsToTest['56f935002e6c0d55fa000d92'];
+const Animal = functionsToTest['56f935002e6c0d55fa000d92'];
 
 //! в этой задаче тестируются три класса Shark, Cat, Dog, которые наследуются от класса Animal
 

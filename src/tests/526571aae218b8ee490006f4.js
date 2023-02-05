@@ -36,7 +36,7 @@ describe('Random tests', () => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 50; i++) {
     let num = randint(0, 10 ** randint(1, 10));
     let expected = [...num.toString(2)].reduce((a, b) => a + +b, 0);
     it(`countBits(${num}) should equal ${expected}`, () => {

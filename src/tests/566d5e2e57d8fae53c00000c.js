@@ -6,7 +6,7 @@ const getCard = functionsToTest['566d5e2e57d8fae53c00000c'];
 
 describe('Bingo Card:', function () {
   it('Has 24 numbers', function () {
-    Test.assertEquals(getCard().length, 24);
+    assert.strictEqual(getCard().length, 24);
   });
 
   it('Each number is unique', function () {
@@ -20,7 +20,7 @@ describe('Bingo Card:', function () {
         }
       }
     }
-    Test.assertEquals(areAllUnique, true);
+    assert.strictEqual(areAllUnique, true);
   });
 
   it('Contains a column B that has 5 items', function () {
@@ -43,21 +43,6 @@ describe('Bingo Card:', function () {
     testColumnCount(5, 'O');
   });
 
-  if (
-    ('Is ordered by column',
-    function () {
-      let card = getCard();
-      let columns = '';
-      for (let i = 0; i < card.length; i++) {
-        columns += card[i].substring(0, 1);
-      }
-      Test.assertEquals(
-        Regexp.IsMatch(columns, '^[B]*[I]*[N]*[G]*[O]*$'),
-        true
-      );
-    })
-  );
-
   it('Numbers within a column are in random order', function () {
     let card = getCard();
 
@@ -72,14 +57,14 @@ describe('Bingo Card:', function () {
       n0 = n1;
     }
 
-    Test.assertEquals(
+    assert.strictEqual(
       bigger > 6,
       true,
       'Unlikely variation, found only ' +
         bigger.toString() +
         ' times out of 24 that the next number was bigger than the previous number.'
     );
-    Test.assertEquals(
+    assert.strictEqual(
       bigger < 23,
       true,
       'Unlikely variation, found ' +
@@ -118,7 +103,7 @@ describe('Bingo Card:', function () {
         matches++;
       }
     }
-    Test.assertEquals(
+    assert.strictEqual(
       matches < 18,
       true,
       'Unlike event happened, are the cards random?'
@@ -145,7 +130,7 @@ describe('Bingo Card:', function () {
         }
       }
     }
-    Test.assertEquals(
+    assert.strictEqual(
       numbers.length < 7,
       true,
       'Unlike event happened, are the cards random?'
@@ -157,8 +142,8 @@ describe('Bingo Card:', function () {
     for (let i = 0; i < card.length; i++) {
       if (card[i].substring(0, 1) == column) {
         let n = Number(card[i].substring(1, card[i].length));
-        Test.assertEquals(n >= start, true, 'Found: ' + card[i]);
-        Test.assertEquals(n <= end, true, 'Found: ' + card[i]);
+        assert.strictEqual(n >= start, true, 'Found: ' + card[i]);
+        assert.strictEqual(n <= end, true, 'Found: ' + card[i]);
       }
     }
   }
@@ -171,6 +156,6 @@ describe('Bingo Card:', function () {
         count++;
       }
     }
-    Test.assertEquals(expected, count);
+    assert.strictEqual(expected, count);
   }
 });

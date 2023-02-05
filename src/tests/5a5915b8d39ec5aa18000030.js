@@ -5,11 +5,13 @@ const functionsToTest = require('./functionsToTest');
 const findMissing = functionsToTest['5a5915b8d39ec5aa18000030'];
 
 describe('Basic tests', function () {
-  Test.assertEquals(findMissing([1, 2, 3], [1, 3]), 2);
-  Test.assertEquals(findMissing([6, 1, 3, 6, 8, 2], [3, 6, 6, 1, 2]), 8);
-  Test.assertEquals(findMissing([7], []), 7);
-  Test.assertEquals(findMissing([4, 3, 3, 61, 8, 8], [8, 61, 8, 3, 4]), 3);
-  Test.assertEquals(findMissing([0, 0, 0, 0, 0], [0, 0, 0, 0]), 0);
+  it('tests', () => {
+    assert.strictEqual(findMissing([1, 2, 3], [1, 3]), 2);
+    assert.strictEqual(findMissing([6, 1, 3, 6, 8, 2], [3, 6, 6, 1, 2]), 8);
+    assert.strictEqual(findMissing([7], []), 7);
+    assert.strictEqual(findMissing([4, 3, 3, 61, 8, 8], [8, 61, 8, 3, 4]), 3);
+    assert.strictEqual(findMissing([0, 0, 0, 0, 0], [0, 0, 0, 0]), 0);
+  });
 });
 
 function shuffle(array) {
@@ -34,6 +36,8 @@ describe('Random tests', function () {
     let arr2 = arr1.slice();
     shuffle(arr2);
     let sol = arr2.pop();
-    Test.assertEquals(findMissing(arr1, arr2), sol);
+    it(`Tests for values (${arr1}, ${arr2})`, () => {
+      assert.strictEqual(findMissing(arr1, arr2), sol);
+    });
   }
 });

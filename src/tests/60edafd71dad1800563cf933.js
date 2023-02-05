@@ -1,4 +1,4 @@
-const { assert } = require('chai');
+const { expect } = require('chai');
 const { describe, it } = require('mocha');
 const functionsToTest = require('./functionsToTest');
 

@@ -10,7 +10,7 @@ describe('isPowerOfTwo', () => {
   it('Powers of 2', () => {
     const ns = [1, 2, 4096, 536870912, rnd(), rnd()];
     for (const n of ns)
-      Test.assertEquals(isPowerOfTwo(n), true, n + ' is a power of 2');
+      assert.strictEqual(isPowerOfTwo(n), true, n + ' is a power of 2');
   });
   it('Non-powers of 2', () => {
     const ns = [
@@ -26,13 +26,13 @@ describe('isPowerOfTwo', () => {
       rnd() - 5,
     ];
     for (const n of ns)
-      Test.assertEquals(isPowerOfTwo(n), false, n + ' is NOT a power of 2');
+      assert.strictEqual(isPowerOfTwo(n), false, n + ' is NOT a power of 2');
   });
   it('Random tests', () => {
     for (let i = 0; i < 50; i++) {
       const r = Math.random() < 0.5,
         n = rnd() + !r;
-      Test.assertEquals(
+      assert.strictEqual(
         isPowerOfTwo(n),
         r,
         `${n} is${r ? '' : ' NOT'} a power of 2`

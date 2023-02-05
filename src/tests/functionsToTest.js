@@ -55,41 +55,20 @@ const functionsToTest = {
   '5808dcb8f0ed42ae34000031': null,
   '57eae20f5500ad98e50002c5': null,
   '5899642f6e1b25935d000161': null,
-
-  /////////////////////
-  /////////////////////
-  /////////////////////
-  /////////////////////
-  /////////////////////
   '541b5694204d12573700101c': null,
   '58d3487a643a3f6aa20000ff': null,
-  '5a19226646d843de9000007d': null,
   '582cb0224e56e068d800003c': null,
   '6391fe3f322221003db3bad6': null,
   '564e7fc20f0b53eb02000106': null,
   '56b0bc0826814364a800005a': null,
   '60edafd71dad1800563cf933': null,
-  '53a1eac7e0afd3ad3300008b': null,
   '56b71b1dbd06e6d88100092a': null,
   '514aa0dc21607ae236000017': null,
-  // '55c211cce1ef691d9b000061': null, //! в этом файле уже есть тесты
-  '56fbdda707cff41b68000de2': null,
-  // '56fcc1ee45040039ab0016da': null, //! в этом файле уже есть тесты
-  '56f935002e6c0d55fa000d92': null,
-  // '55bcf04de45497c54a0000d0': null,  //! в этом файле уже есть тесты
-  '5366cfe48d004ce19600104b': null,
-  '527a6e602a7db3456e000a2b': null,
-  '5411e3e95f3a7f6a7a0000e3': null,
-  '525d50d2037b7acd6e000534': null,
-  '5784c8116211383b5f0001d3': null,
+  '55c211cce1ef691d9b000061': null, //Problems
   '52b757663a95b11b3d00062d': null,
-  '55afe435d2ce100356000032': null,
-  '54592a5052756d5c5d0009c3': null,
-  '558ccca75f511f2b0d0000f7': null,
   '5887a6fe0cfe64850800161c': null,
   '62c93765cef6f10030dfa92b': null,
   '56b8903933dbe5831e000c76': null,
-  '5388a9d60b24c52f4c000b5f': null,
   '525e5a1cb735154b320002c8': null,
   '56a6ce697c05fb4667000029': null,
   '589519d1f0902e01af000054': null,
@@ -100,7 +79,6 @@ const functionsToTest = {
   '58649884a1659ed6cb000072': null,
   '56d6b7e43e8186c228000637': null,
   '580755730b5a77650500010c': null,
-  '54e8c3e89e2ae6f4900005a1': null,
   '5effa412233ac3002a9e471d': null,
   '5a2cb4bff28b820c33000082': null,
   '5a5915b8d39ec5aa18000030': null,
@@ -118,11 +96,28 @@ const functionsToTest = {
   '526571aae218b8ee490006f4': null,
   '534d0a229345375d520006a0': null,
   '526a569ca578d7e6e300034e': null,
-  '540de1f0716ab384b4000828': null,
   '59752e1f064d1261cb0000ec': null,
   '566d5e2e57d8fae53c00000c': null,
   '57f625992f4d53c24200070e': null,
   '5f709c8fb0d88300292a7a9d': null,
+
+  // '540de1f0716ab384b4000828': null, // Problems with correct solution
+  // '54e8c3e89e2ae6f4900005a1': null, //questions
+  // '5411e3e95f3a7f6a7a0000e3': null, //Array.reduce
+  // '525d50d2037b7acd6e000534': null, //Array.prototype
+  // '55afe435d2ce100356000032': null, //Array.filter
+  // '54592a5052756d5c5d0009c3': null, //head, tail + 2 more
+  // '558ccca75f511f2b0d0000f7': null, //Array.map
+  // '5388a9d60b24c52f4c000b5f': null, // function.bind
+  // '5784c8116211383b5f0001d3': null,// File class
+  // '5a19226646d843de9000007d': null, //Count consonants
+  // '53a1eac7e0afd3ad3300008b': null, //Mutual recursion
+  // '56fbdda707cff41b68000de2': null, //Cuboid and Cube
+  // '56fcc1ee45040039ab0016da': null, //Cube
+  // '56f935002e6c0d55fa000d92': null, //Animals
+  // '55bcf04de45497c54a0000d0': null, //Person
+  // '5366cfe48d004ce19600104b': null, // Object.create
+  // '527a6e602a7db3456e000a2b': null, //Object.prototype.hash
 };
 
 module.exports = functionsToTest;

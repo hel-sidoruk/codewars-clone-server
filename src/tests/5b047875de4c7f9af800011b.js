@@ -5,30 +5,32 @@ const functionsToTest = require('./functionsToTest');
 const sentence = functionsToTest['5b047875de4c7f9af800011b'];
 
 describe('Fixed tests', function () {
-  let List = [
-    { 1: 'dog' },
-    { 2: 'took' },
-    { 4: 'Vatsan' },
-    { 5: 'for' },
-    { 6: 'a' },
-    { 12: 'spin' },
-  ];
-  Test.assertEquals(sentence(List), 'dog took Vatsan for a spin');
+  it('tests', () => {
+    let List = [
+      { 1: 'dog' },
+      { 2: 'took' },
+      { 4: 'Vatsan' },
+      { 5: 'for' },
+      { 6: 'a' },
+      { 12: 'spin' },
+    ];
+    assert.strictEqual(sentence(List), 'dog took Vatsan for a spin');
 
-  List = [
-    { 3: 'Jake.' },
-    { 5: 'Chinatown' },
-    { 1: 'Forget' },
-    { 4: 'It is' },
-    { 2: 'it' },
-  ];
-  Test.assertEquals(sentence(List), 'Forget it Jake. It is Chinatown');
+    List = [
+      { 3: 'Jake.' },
+      { 5: 'Chinatown' },
+      { 1: 'Forget' },
+      { 4: 'It is' },
+      { 2: 'it' },
+    ];
+    assert.strictEqual(sentence(List), 'Forget it Jake. It is Chinatown');
 
-  List = [{ 3: 'vatsan!' }, { 2: 'love' }, { 1: 'I' }];
-  Test.assertEquals(sentence(List), 'I love vatsan!');
+    List = [{ 3: 'vatsan!' }, { 2: 'love' }, { 1: 'I' }];
+    assert.strictEqual(sentence(List), 'I love vatsan!');
 
-  List = [{ 0: 'Wars' }, { '-1': 'Code' }];
-  Test.assertEquals(sentence(List), 'Code Wars');
+    List = [{ 0: 'Wars' }, { '-1': 'Code' }];
+    assert.strictEqual(sentence(List), 'Code Wars');
+  });
 });
 
 function solution(a) {
@@ -54,11 +56,13 @@ describe('Random tests', function () {
       let object = {};
       object[key.toString()] = Array.from(
         '_'.repeat(5 + ~~(Math.random() * 6)),
-        (_) => alphabet[~~(Math.random() * 52)]
+        () => alphabet[~~(Math.random() * 52)]
       ).join('');
       array.push(object);
     }
     let expected = solution(array);
-    Test.assertEquals(sentence(array), expected);
+    it(`Value = ${expected}`, () => {
+      assert.strictEqual(sentence(array), expected);
+    });
   }
 });

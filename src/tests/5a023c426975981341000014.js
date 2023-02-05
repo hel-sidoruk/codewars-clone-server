@@ -16,16 +16,12 @@ describe('Tests', () => {
 describe('random test', function () {
   let a_, b_, c_;
 
-  it('Testing for 20 random tests', () => {
-    for (let i = 0; i <= 20; i++) {
-      a_ = 1 + ~~(Math.random() * 175);
-      b_ = 1 + ~~(Math.random() * (180 - a_));
-      c_ = 180 - a_ - b_;
-      assert.strictEqual(
-        otherAngle(a_, b_),
-        c_,
-        'Testing: ' + a_ + ', ' + b_ + '; Expecting: ' + c_
-      );
-    }
-  });
+  for (let i = 0; i <= 20; i++) {
+    a_ = 1 + ~~(Math.random() * 175);
+    b_ = 1 + ~~(Math.random() * (180 - a_));
+    c_ = 180 - a_ - b_;
+    it('Testing: ' + a_ + ', ' + b_ + '; Expecting: ' + c_, () => {
+      assert.strictEqual(otherAngle(a_, b_), c_);
+    });
+  }
 });

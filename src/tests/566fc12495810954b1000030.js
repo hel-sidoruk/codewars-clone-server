@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const nbDig = functionsToTest['566fc12495810954b1000030'];
 
-describe('nbDig', () => {
+describe('Fixed tests', () => {
   it('Basic tests', () => {
     assert.strictEqual(nbDig(5750, 0), 4700, 'n = 5750, d = 0');
     assert.strictEqual(nbDig(11011, 2), 9481, 'n = 11011, d = 2');
@@ -17,28 +17,30 @@ describe('nbDig', () => {
     assert.strictEqual(nbDig(7856, 4), 7132, 'n = 7856, d = 4');
     assert.strictEqual(nbDig(14956, 1), 17267, 'n = 14956, d = 1');
   });
+});
 
-  it('Random tests', () => {
-    function randint(a, b) {
-      return Math.floor(Math.random() * (b - a + 1) + a);
-    }
+describe('Random tests', () => {
+  function randint(a, b) {
+    return Math.floor(Math.random() * (b - a + 1) + a);
+  }
 
-    //................
-    function nbDigSol0000(n, d) {
-      let cnt = 0,
-        d0 = d.toString();
-      for (let k = 0; k <= n; ++k) {
-        let s = (k * k).toString();
-        for (let i = 0; i < s.length; i++) if (s[i] == d0) ++cnt;
-      }
-      return cnt;
+  //................
+  function nbDigSol0000(n, d) {
+    let cnt = 0,
+      d0 = d.toString();
+    for (let k = 0; k <= n; ++k) {
+      let s = (k * k).toString();
+      for (let i = 0; i < s.length; i++) if (s[i] == d0) ++cnt;
     }
-    //................
+    return cnt;
+  }
+  //................
 
-    for (let i = 0; i < 100; i++) {
-      const n = randint(2000, 15000);
-      const d = randint(0, 9);
-      assert.strictEqual(nbDig(n, d), nbDigSol0000(n, d), `n = ${n}, d = ${d}`);
-    }
-  });
+  for (let i = 0; i < 100; i++) {
+    const n = randint(2000, 15000);
+    const d = randint(0, 9);
+    it(`n = ${n}, d = ${d}`, () => {
+      assert.strictEqual(nbDig(n, d), nbDigSol0000(n, d));
+    });
+  }
 });
