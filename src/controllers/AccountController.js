@@ -16,7 +16,8 @@ class AccountController {
 
       let { solvedKatas, trainedKatas } = accountData;
       if (!kataId) return next(ApiError.badRequest('No kata id provided'));
-      if (solvedKatas.includes(kataId)) return res.json('Kata already solved');
+      if (solvedKatas.includes(kataId))
+        return res.json({ message: 'Kata already solved' });
       trainedKatas = trainedKatas.filter((kata) => kata !== kataId);
 
       solvedKatas.push(kataId);
@@ -45,7 +46,7 @@ class AccountController {
       const { trainedKatas } = accountData;
       if (!kataId) return next(ApiError.badRequest('No kata id provided'));
       if (trainedKatas.includes(kataId))
-        return res.json('Kata already trained');
+        return res.json({ message: 'Kata already trained' });
 
       trainedKatas.push(kataId);
 
