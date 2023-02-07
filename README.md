@@ -39,6 +39,7 @@ Api for "RS Clone".
     - [Get Account info](https://github.com/hel-sidoruk/rs-clone-server#get-account-info)
     - [Add trained kata](https://github.com/hel-sidoruk/rs-clone-server#add-trained-kata)
     - [Add solved kata](https://github.com/hel-sidoruk/rs-clone-server#add-solved-kata)
+    - [Add starred kata](https://github.com/hel-sidoruk/rs-clone-server#add-starred-kata)
 
 **Get Katas**
 ----
@@ -976,6 +977,7 @@ Add kata id to trainedKatas array. Returns error if user is not authorized
 * **Headers:**
 
     `'Authorization': 'Bearer <token>'`
+    `'Content-Type': 'application/json'`
 
 * **Data Params**
 
@@ -1025,6 +1027,57 @@ Add kata id to solvedKatas array. Returns error if user is not authorized
 * **Headers:**
 
     `'Authorization': 'Bearer <token>'`
+    `'Content-Type': 'application/json'`
+
+* **Data Params**
+
+    ```typescript
+      {
+        kataId: string
+      }
+    ```
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+  **Content:**
+  ```json
+    {
+      "status": "ok"
+    }
+  ```
+
+* **Error Response:**
+
+  * **Code:** 401 <br />
+      **Content:**
+
+      ```json
+        {
+          "message": "User is not authorized"
+        }
+      ```
+
+</details>
+
+**Add starred kata**
+----
+Add kata id to starredKatas array or removes kata id if it is already in array. Returns error if user is not authorized
+
+<details>
+
+* **URL**
+
+    /api/account/starred
+
+* **Method:**
+
+    `PATCH`
+
+* **Headers:**
+
+    `'Authorization': 'Bearer <token>'`
+    `'Content-Type': 'application/json'`
 
 * **Data Params**
 
