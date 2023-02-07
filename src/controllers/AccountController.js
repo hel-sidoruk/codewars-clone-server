@@ -1,5 +1,5 @@
 const ApiError = require('../error/ApiError');
-const { Accounts } = require('../models/models');
+const { Accounts, Challenges } = require('../models/models');
 
 class AccountController {
   async getInfo(req, res) {
@@ -56,6 +56,41 @@ class AccountController {
           where: {
             username,
           },
+        }
+      );
+
+      return res.json({ status: 'ok' });
+    } catch (e) {
+      next(ApiError.badRequest(e.message));
+    }
+  }
+
+  async addStarredKata(req, res, next) {
+    try {
+      const { username } = req.user;
+      const accountData = await Accounts.findOne({ where: { username } });
+      const { kataId, stars } = req.body;
+
+      let { starredKatas } = accountData;
+      if (!kataId) return next(ApiError.badRequest('No kata id provided'));
+      const starsCount = starredKatas.includes(kataId) ? stars - 1 : stars + 1;
+      if (starredKatas.includes(kataId))
+        starredKatas = starredKatas.filter((el) => el !== kataId);
+      else starredKatas.push(kataId);
+
+      await Accounts.update(
+        { starredKatas },
+        {
+          where: {
+            username,
+          },
+        }
+      );
+
+      await Challenges.update(
+        { totalStars: starsCount },
+        {
+          where: { id: kataId },
         }
       );
 

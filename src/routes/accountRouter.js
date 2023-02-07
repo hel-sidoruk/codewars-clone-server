@@ -6,5 +6,6 @@ const router = new Router();
 router.get('/', authMiddleware, AccountController.getInfo);
 router.patch('/solved', authMiddleware, AccountController.addSolvedKata);
 router.patch('/trained', authMiddleware, AccountController.addTrainedKata);
+router.patch('/starred', authMiddleware, AccountController.addStarredKata);
 
 module.exports = router;

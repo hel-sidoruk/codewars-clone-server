@@ -5,6 +5,13 @@ const { Solutions } = require('../models/models');
 class SolutionsController {
   async getSolutions(req, res) {
     const { kataId } = req.params;
+    const { username } = req.query;
+    if (username) {
+      const solutions = await Solutions.findAll({
+        where: { kataId, username },
+      });
+      return res.json(solutions);
+    }
     const solutions = await Solutions.findAll({
       where: { kataId },
     });
