@@ -40,6 +40,7 @@ Api for "RS Clone".
     - [Add trained kata](https://github.com/hel-sidoruk/rs-clone-server#add-trained-kata)
     - [Add solved kata](https://github.com/hel-sidoruk/rs-clone-server#add-solved-kata)
     - [Add starred kata](https://github.com/hel-sidoruk/rs-clone-server#add-starred-kata)
+    - [Add forfeited kata](https://github.com/hel-sidoruk/rs-clone-server#add-forfeited-kata)
 
 **Get Katas**
 ----
@@ -944,7 +945,9 @@ Returns json data about registered account. Returns error if user is not authori
       "solvedKatas": [
         "583710ccaa6717322c000105"
       ],
-      "trainedKatas": []
+      "trainedKatas": [],
+      "starredKatas": ["61432694beeca7000f37bb57"],
+      "forfeitedKatas": []
     }
   ```
 * **Error Response:**
@@ -1069,6 +1072,56 @@ Add kata id to starredKatas array or removes kata id if it is already in array. 
 * **URL**
 
     /api/account/starred
+
+* **Method:**
+
+    `PATCH`
+
+* **Headers:**
+
+    `'Authorization': 'Bearer <token>'`
+    `'Content-Type': 'application/json'`
+
+* **Data Params**
+
+    ```typescript
+      {
+        kataId: string
+      }
+    ```
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+  **Content:**
+  ```json
+    {
+      "status": "ok"
+    }
+  ```
+
+* **Error Response:**
+
+  * **Code:** 401 <br />
+      **Content:**
+
+      ```json
+        {
+          "message": "User is not authorized"
+        }
+      ```
+
+</details>
+
+**Add forfeited kata**
+----
+Add kata id to forfeitedKatas array. Returns error if user is not authorized
+
+<details>
+
+* **URL**
+
+    /api/account/forfeited
 
 * **Method:**
 
