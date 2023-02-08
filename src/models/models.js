@@ -60,6 +60,10 @@ const Accounts = sequelize.define(
     solvedKatas: { type: DataTypes.ARRAY(DataTypes.STRING), defaultValue: [] },
     trainedKatas: { type: DataTypes.ARRAY(DataTypes.STRING), defaultValue: [] },
     starredKatas: { type: DataTypes.ARRAY(DataTypes.STRING), defaultValue: [] },
+    forfeitedKatas: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
+      defaultValue: [],
+    },
   },
   {
     timestamps: false,

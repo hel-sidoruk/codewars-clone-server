@@ -65,6 +65,34 @@ class AccountController {
     }
   }
 
+  async addForfeitedKata(req, res, next) {
+    try {
+      const { username } = req.user;
+      const accountData = await Accounts.findOne({ where: { username } });
+      const { kataId } = req.body;
+
+      const { forfeitedKatas } = accountData;
+      if (!kataId) return next(ApiError.badRequest('No kata id provided'));
+      if (forfeitedKatas.includes(kataId))
+        return res.json({ message: 'Kata already in list' });
+
+      forfeitedKatas.push(kataId);
+
+      await Accounts.update(
+        { forfeitedKatas },
+        {
+          where: {
+            username,
+          },
+        }
+      );
+
+      return res.json({ status: 'ok' });
+    } catch (e) {
+      next(ApiError.badRequest(e.message));
+    }
+  }
+
   async addStarredKata(req, res, next) {
     try {
       const { username } = req.user;

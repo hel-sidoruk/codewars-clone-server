@@ -46,7 +46,7 @@ class UserController {
 
       await Users.update(updates, {
         where: {
-          id,
+          username: id,
         },
       });
 
