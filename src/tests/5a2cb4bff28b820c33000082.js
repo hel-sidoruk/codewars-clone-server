@@ -4,7 +4,7 @@ const Test = require('@codewars/test-compat');
 
 const whoseBicycle = functionsToTest['5a2cb4bff28b820c33000082'];
 
-describe('Basic tests', function () {
+describe('Fixed tests', function () {
   it('fixed tests', () => {
     Test.assertEquals(
       whoseBicycle(

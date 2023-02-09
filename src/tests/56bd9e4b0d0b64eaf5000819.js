@@ -9,8 +9,8 @@ const objB = { a: 3, c: 6, d: 3 };
 const objC = { a: 5, d: 11, e: 8 };
 const objD = { c: 3 };
 
-describe('Combine two objects', () => {
-  it('tests', () => {
+describe('Fixed tests', () => {
+  it('Combine two objects', () => {
     assert.deepEqual(combine(objA, objB), { a: 13, b: 20, c: 36, d: 3 });
     assert.deepEqual(combine(objA, objC), { a: 15, b: 20, c: 30, d: 11, e: 8 });
   });

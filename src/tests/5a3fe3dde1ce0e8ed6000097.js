@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const century = functionsToTest['5a3fe3dde1ce0e8ed6000097'];
 
-describe('Basic Tests', function () {
+describe('Fixed Tests', function () {
   it('Sample Tests', function () {
     assert.strictEqual(century(1705), 18, 'Testing for year 1705');
     assert.strictEqual(century(1900), 19, 'Testing for year 1900');

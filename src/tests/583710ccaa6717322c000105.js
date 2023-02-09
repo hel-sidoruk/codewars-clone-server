@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const simpleMultiplication = functionsToTest['583710ccaa6717322c000105'];
 
-describe('Basic Tests', () => {
+describe('Fixed tests', () => {
   it('Should return given argument times eight...', () => {
     assert.strictEqual(
       simpleMultiplication(2),

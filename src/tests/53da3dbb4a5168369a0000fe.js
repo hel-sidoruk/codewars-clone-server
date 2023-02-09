@@ -5,7 +5,7 @@ const _ = require('lodash');
 
 const evenOrOdd = functionsToTest['53da3dbb4a5168369a0000fe'];
 
-describe('Sample tests', () => {
+describe('Fixed tests', () => {
   it('2 is even', () => {
     assert.strictEqual(evenOrOdd(2), 'Even');
   });

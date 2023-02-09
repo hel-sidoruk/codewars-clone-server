@@ -4,7 +4,7 @@ const Test = require('@codewars/test-compat');
 
 const createFunctions = functionsToTest['526ec46d6f5e255e150002d1'];
 
-describe('tests', function () {
+describe('Fixed tests', function () {
   let callbacks = createFunctions(10);
 
   it('function must return an array of functions', function () {
@@ -27,7 +27,9 @@ describe('tests', function () {
       Test.assertEquals(callbacks[i](), i, 'Function with index ' + i);
     }
   });
+});
 
+describe('Random tests', function () {
   it('random values for n', function () {
     for (let i = 0; i < 5; i++) {
       let rand = Test.randomNumber() + 10;

@@ -3,7 +3,7 @@ const { describe, it } = require('mocha');
 const functionsToTest = require('./functionsToTest');
 
 const triangular = functionsToTest['525e5a1cb735154b320002c8'];
-describe('Basic tests', () => {
+describe('Fixed tests', () => {
   it('Testing for fixed tests', () => {
     assert.strictEqual(triangular(2), 3);
     assert.strictEqual(triangular(7), 28);

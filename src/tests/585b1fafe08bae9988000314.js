@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const explode = functionsToTest['585b1fafe08bae9988000314'];
 
-describe('Basic tests', () => {
+describe('Fixed tests', () => {
   const tests = [
     ['', ''],
     ['0', ''],

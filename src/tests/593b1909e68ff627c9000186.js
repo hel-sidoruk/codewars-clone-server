@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const nicknameGenerator = functionsToTest['593b1909e68ff627c9000186'];
 
-describe('Example Test Cases', function () {
+describe('Fixed tests', function () {
   assert.strictEqual(nicknameGenerator('Jimmy'), 'Jim');
   assert.strictEqual(nicknameGenerator('Samantha'), 'Sam');
   assert.strictEqual(nicknameGenerator('Sam'), 'Error: Name too short');

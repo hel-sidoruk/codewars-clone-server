@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const typeOfSum = functionsToTest['5a2e9ae2b6cfd7692a0000ba'];
 
-describe('Basic tests', () => {
+describe('Fixed tests', () => {
   it(`Type of sum 12, 1 should be 'number'`, () => {
     assert.strictEqual(typeOfSum(12, 1), 'number');
   });

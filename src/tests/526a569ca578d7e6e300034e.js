@@ -16,7 +16,7 @@ let Alphabet = {
     '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
 };
 
-describe('example tests', function () {
+describe('Fixed tests', function () {
   let bin = Alphabet.BINARY,
     oct = Alphabet.OCTAL,
     dec = Alphabet.DECIMAL,

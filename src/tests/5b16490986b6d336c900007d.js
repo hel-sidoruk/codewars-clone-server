@@ -11,8 +11,8 @@ const sol = (r) =>
     .reduce((a, b) => [...a, ...b], [])
     .filter((s) => s.length);
 
-describe('myLanguages', () => {
-  it('Fixed tests', () => {
+describe('Fixed tests', () => {
+  it('myLanguages', () => {
     assert.deepEqual(myLanguages({ Java: 10, Ruby: 80, Python: 65 }), [
       'Ruby',
       'Python',
@@ -24,8 +24,10 @@ describe('myLanguages', () => {
     ]);
     assert.deepEqual(myLanguages({ 'C++': 50, ASM: 10, Haskell: 20 }), []);
   });
+});
 
-  it('Random tests', () => {
+describe('Random tests', () => {
+  it('tests', () => {
     const langs1 =
       `Arabic Bengali Bulgarian Chinese  Croatian Czech Danish Dutch English Estonian Finnish French German Greek Hindi Hungarian Irish Italian Japanese Korean Latvian Lithuanian Maltese Polish Portuguese Punjabi Romanian Russian Slovak Slovenian Spanish Swedish Turkish`
         .split(' ')

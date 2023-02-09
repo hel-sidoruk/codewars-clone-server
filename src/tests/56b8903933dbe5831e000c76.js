@@ -5,14 +5,16 @@ const functionsToTest = require('./functionsToTest');
 
 const spoonerize = functionsToTest['56b8903933dbe5831e000c76'];
 
-describe('Spoonerize Me', () => {
+describe('Fixed tests', () => {
   it('Basic Tests', function () {
     assert.equal(spoonerize('not picking'), 'pot nicking');
     assert.equal(spoonerize('wedding bells'), 'bedding wells');
     assert.equal(spoonerize('jelly beans'), 'belly jeans');
     assert.equal(spoonerize('pop corn'), 'cop porn');
   });
+});
 
+describe('Spoonerize Me', () => {
   it('Random Tests', function () {
     function spoonTest(words) {
       words = words.split(' ');

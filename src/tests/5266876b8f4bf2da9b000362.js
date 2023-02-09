@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const likes = functionsToTest['5266876b8f4bf2da9b000362'];
 
-describe('static tests', function () {
+describe('Fixed tests', function () {
   it('should return correct text', function () {
     assert.strictEqual(likes([]), 'no one likes this');
     assert.strictEqual(likes(['Peter']), 'Peter likes this');

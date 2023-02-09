@@ -4,6 +4,15 @@ const functionsToTest = require('./functionsToTest');
 const newFunction = functionsToTest['5a2cb53cee1aaef2fa000037'];
 const Test = require('@codewars/test-compat');
 
+describe('Fixed tests', function () {
+  it('test', function () {
+    Test.expectNoError('Your function is old.', function () {
+      new newFunction();
+      console.log('Your function is new.');
+    });
+  });
+});
+
 describe('Your Interpreter', function () {
   it('should work for some example test cases', function () {
     let novelty = 0;

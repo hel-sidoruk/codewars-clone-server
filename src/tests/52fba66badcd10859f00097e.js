@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const disemvowel = functionsToTest['52fba66badcd10859f00097e'];
 
-describe('Basic tests', () => {
+describe('Fixed tests', () => {
   it('Testing for fixed tests', () => {
     assert.strictEqual(
       disemvowel('This website is for losers LOL!'),

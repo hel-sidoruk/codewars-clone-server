@@ -5,7 +5,7 @@ const functionsToTest = require('./functionsToTest');
 
 const fakeBin = functionsToTest['57eae65a4321032ce000002d'];
 
-describe('Basic tests', () => {
+describe('Fixed tests', () => {
   it('Testing for fixed tests', () => {
     assert.strictEqual(fakeBin('45385593107843568'), '01011110001100111');
     assert.strictEqual(fakeBin('509321967506747'), '101000111101101');

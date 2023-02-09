@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const capitalizeWord = functionsToTest['595970246c9b8fa0a8000086'];
 
-describe('Tests', () => {
+describe('Fixed tests', () => {
   it('test', () => {
     assert.strictEqual(capitalizeWord('word'), 'Word');
     assert.strictEqual(capitalizeWord('i'), 'I');

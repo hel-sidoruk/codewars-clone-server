@@ -5,7 +5,7 @@ const Test = require('@codewars/test-compat');
 
 const calculate = functionsToTest['55c211cce1ef691d9b000061'];
 
-describe('Main Tests', function () {
+describe('Fixed Tests', function () {
   it('should be a correct number from example Test Case', function () {
     Test.assertEquals(calculate(1)(1), 2);
     Test.assertEquals(calculate(1, 1)(1), 3);

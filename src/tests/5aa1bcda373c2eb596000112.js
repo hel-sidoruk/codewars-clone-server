@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const maxTriSum = functionsToTest['5aa1bcda373c2eb596000112'];
 
-describe('Basic tests', () => {
+describe('Fixed tests', () => {
   it('Testing for fixed tests', () => {
     assert.strictEqual(maxTriSum([3, 2, 6, 8, 2, 3]), 17);
     assert.strictEqual(maxTriSum([2, 9, 13, 10, 5, 2, 9, 5]), 32);
@@ -20,8 +20,9 @@ describe('Basic tests', () => {
     assert.strictEqual(maxTriSum([-2, -4, 0, -9, 2]), 0);
     assert.strictEqual(maxTriSum([-5, -1, -9, 0, 2]), 1);
   });
-
-  it('Random tests', () => {
+});
+describe('Random tests', () => {
+  it('tests', () => {
     const randint = (a, b) => ~~(Math.random() * (b - a + 1) + a);
 
     const sol = (n) =>

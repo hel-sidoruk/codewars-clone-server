@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const otherAngle = functionsToTest['5a023c426975981341000014'];
 
-describe('Tests', () => {
+describe('Fixed', () => {
   it('test', () => {
     assert.strictEqual(otherAngle(30, 60), 90);
     assert.strictEqual(otherAngle(60, 60), 60);

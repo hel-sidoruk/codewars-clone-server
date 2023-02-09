@@ -10,7 +10,7 @@ function solution(a, b) {
   if (a > 50 && b >= 2) return 75;
   return 0;
 }
-describe('Basic tests', () => {
+describe('Fixed tests', () => {
   for (let exam = 0; exam <= 10; exam++)
     for (let projects = 0; projects <= 11; projects++)
       it(`exam = ${exam}, projects = ${projects}`, () => {

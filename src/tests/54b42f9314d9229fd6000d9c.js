@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const duplicateEncode = functionsToTest['54b42f9314d9229fd6000d9c'];
 
-describe('Duplicate Encoder', () => {
+describe('Fixed tests', () => {
   it('Testing for fixed tests', () => {
     assert.strictEqual(
       duplicateEncode('din'),

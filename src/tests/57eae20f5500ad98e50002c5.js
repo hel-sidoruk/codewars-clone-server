@@ -4,8 +4,8 @@ const functionsToTest = require('./functionsToTest');
 
 const noSpace = functionsToTest['57eae20f5500ad98e50002c5'];
 
-describe('Basic tests', () => {
-  it('Fixed Tests', () => {
+describe('Fixed tests', () => {
+  it('Tests', () => {
     assert.strictEqual(
       noSpace('8 j 8   mBliB8g  imjB8B8  jl  B'),
       '8j8mBliB8gimjB8B8jlB'

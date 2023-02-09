@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const factory = functionsToTest['563f879ecbb8fcab31000041'];
 
-describe('Basic tests', () => {
+describe('Fixed tests', () => {
   it('tests', () => {
     assert.deepEqual(factory(3)([1, 2, 3]), [3, 6, 9]);
     assert.deepEqual(factory(5)([1, 2, 3]), [5, 10, 15]);

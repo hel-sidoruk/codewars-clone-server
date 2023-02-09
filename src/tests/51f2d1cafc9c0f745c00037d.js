@@ -3,7 +3,7 @@ const { describe, it } = require('mocha');
 const functionsToTest = require('./functionsToTest');
 
 const solution = functionsToTest['51f2d1cafc9c0f745c00037d'];
-describe('Tests', () => {
+describe('Fixed tests', () => {
   function check(str, ending, expected) {
     let result = solution(str, ending);
     it(

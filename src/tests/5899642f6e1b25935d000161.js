@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const mergeArrays = functionsToTest['5899642f6e1b25935d000161'];
 
-describe('Solution', function () {
+describe('Fixed tests', function () {
   it('Basic tests', function () {
     assert.deepEqual(mergeArrays([], []), [], 'Should work for 2 empty arrays');
     assert.deepEqual(
@@ -28,7 +28,9 @@ describe('Solution', function () {
       'Should work for negative numbers'
     );
   });
+});
 
+describe('Solution', function () {
   it('Same order', function () {
     assert.deepEqual(
       mergeArrays([1, 2, 3, 4], [5, 6, 7, 8]),

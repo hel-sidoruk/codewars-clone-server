@@ -10,7 +10,7 @@ const vowels = 'aeiou',
 
 let rTests = 10;
 
-describe('Tests using hard-coded strings', function () {
+describe('Fixed tests', function () {
   it('Should return number of consonants in string', function () {
     assert.strictEqual(consonantCount(''), 0, 'Test string is empty string');
     assert.strictEqual(consonantCount('aaaaa'), 0, 'Test string: "aaaaa"');

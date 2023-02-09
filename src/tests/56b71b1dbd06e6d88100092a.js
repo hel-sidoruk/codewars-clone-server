@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const buildFun = functionsToTest['56b71b1dbd06e6d88100092a'];
 
-describe('Basic tests', () => {
+describe('Fixed tests', () => {
   for (let i = 0; i < 10; i++) {
     it('Value = ' + i, () => {
       assert.strictEqual(buildFun(10)[i](), i);

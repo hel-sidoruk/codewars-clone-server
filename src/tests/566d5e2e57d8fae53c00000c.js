@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const getCard = functionsToTest['566d5e2e57d8fae53c00000c'];
 
-describe('Bingo Card:', function () {
+describe('Fixed tests', function () {
   it('Has 24 numbers', function () {
     assert.strictEqual(getCard().length, 24);
   });
@@ -22,7 +22,9 @@ describe('Bingo Card:', function () {
     }
     assert.strictEqual(areAllUnique, true);
   });
+});
 
+describe('Bingo Card:', function () {
   it('Contains a column B that has 5 items', function () {
     testColumnCount(5, 'B');
   });

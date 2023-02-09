@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const isPowerOfTwo = functionsToTest['534d0a229345375d520006a0'];
 
-describe('isPowerOfTwo', () => {
+describe('Fixed tests', () => {
   const rnd = () => Math.pow(2, 6 + ~~(Math.random() * 15));
 
   it('Powers of 2', () => {
@@ -28,6 +28,11 @@ describe('isPowerOfTwo', () => {
     for (const n of ns)
       assert.strictEqual(isPowerOfTwo(n), false, n + ' is NOT a power of 2');
   });
+});
+
+describe('isPowerOfTwo', () => {
+  const rnd = () => Math.pow(2, 6 + ~~(Math.random() * 15));
+
   it('Random tests', () => {
     for (let i = 0; i < 50; i++) {
       const r = Math.random() < 0.5,

@@ -5,7 +5,7 @@ const functionsToTest = require('./functionsToTest');
 
 const nextPal = functionsToTest['56a6ce697c05fb4667000029'];
 
-describe('Basic Tests', function () {
+describe('Fixed Tests', function () {
   it('Test', () => {
     assert.strictEqual(nextPal(11), 22);
     assert.strictEqual(nextPal(188), 191);

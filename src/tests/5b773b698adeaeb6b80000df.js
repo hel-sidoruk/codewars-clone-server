@@ -5,7 +5,7 @@ const Test = require('@codewars/test-compat');
 
 const reusableMemoisation = functionsToTest['5b773b698adeaeb6b80000df'];
 
-describe('factorial', () => {
+describe('Fixed tests', () => {
   const factorial = (i) => (i ? i * factorial(i - 1) : 1);
   const factorialMemo = reusableMemoisation((i) =>
     i ? i * factorialMemo(i - 1) : 1
@@ -130,7 +130,7 @@ describe('sanity check', () => {
     Test.assertEquals(v, 1);
   });
 });
-describe('random tests', () => {
+describe('Random tests', () => {
   const uncurry = (fn) =>
     function (...args) {
       for (const arg of args) fn = fn(arg);

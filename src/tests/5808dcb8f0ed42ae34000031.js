@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const switchItUp = functionsToTest['5808dcb8f0ed42ae34000031'];
 
-describe('Basic Tests', () => {
+describe('Fixed Tests', () => {
   it('Testing for fixed tests', () => {
     assert.strictEqual(switchItUp(1), 'One');
     assert.strictEqual(switchItUp(3), 'Three');

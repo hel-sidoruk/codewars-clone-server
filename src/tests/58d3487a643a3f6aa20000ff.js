@@ -12,7 +12,7 @@ function _mmm(arr) {
   }
 }
 
-describe('Tests', () => {
+describe('Fixed tests', () => {
   function randInt(n, negative = true) {
     return negative
       ? Math.floor(Math.random() * n - n / 2)

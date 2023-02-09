@@ -4,8 +4,8 @@ const functionsToTest = require('./functionsToTest');
 
 const dataReverse = functionsToTest['569d488d61b812a0f7000015'];
 
-describe('Data Reverse', function () {
-  it('Fixed Tests', function () {
+describe('Fixed Tests', function () {
+  it('tests', function () {
     const data1 = [
       1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1,
       0, 1, 0, 1, 0, 1, 0,
@@ -19,6 +19,9 @@ describe('Data Reverse', function () {
     const data4 = [0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0];
     assert.deepEqual(dataReverse(data3), data4);
   });
+});
+
+describe('Data Reverse', function () {
   it('Random Tests', function () {
     const rnd = (n) => Math.floor(Math.random() * n);
     const rndArray = () => Array.from({ length: rnd(30) * 8 }, () => rnd(2));

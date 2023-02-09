@@ -4,8 +4,8 @@ const functionsToTest = require('./functionsToTest');
 
 const invertValues = functionsToTest['5899dc03bc95b1bf1b0000ad'];
 
-describe('Invert array values', () => {
-  it('Fixed tests', () => {
+describe('Fixed tests', () => {
+  it('Invert array values', () => {
     assert.deepEqual(invertValues([1, 2, 3, 4, 5]), [-1, -2, -3, -4, -5]);
     assert.deepEqual(invertValues([1, -2, 3, -4, 5]), [-1, 2, -3, 4, -5]);
     assert.deepEqual(invertValues([]), []);

@@ -4,8 +4,8 @@ const functionsToTest = require('./functionsToTest');
 
 const checkCoupon = functionsToTest['539de388a540db7fec000642'];
 
-describe('Tests', function () {
-  it('Fixed tests', () => {
+describe('Fixed tests', function () {
+  it('tests', () => {
     assert.strictEqual(
       checkCoupon('123', '123', 'September 5, 2014', 'October 1, 2014'),
       true
@@ -47,8 +47,10 @@ describe('Tests', function () {
       true
     );
   });
+});
 
-  it('Random tests', function () {
+describe('Random ests', function () {
+  it('tests', function () {
     Object.freeze(Math);
     function randmonth() {
       return [

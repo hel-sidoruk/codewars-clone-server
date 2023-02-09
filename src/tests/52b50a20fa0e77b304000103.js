@@ -4,7 +4,7 @@ const Test = require('@codewars/test-compat');
 
 const isSantaClausable = functionsToTest['52b50a20fa0e77b304000103'];
 
-describe('SantaClausable Interface', function () {
+describe('Fixed tests', function () {
   let SantaClaus = (function () {
     function SantaClaus(name) {
       this.name = name;
@@ -110,6 +110,4 @@ describe('SantaClausable Interface', function () {
       'Lowercase method names'
     );
   });
-
-  console.log('<h2>Merry X-Mas and a Happy New Year!</h2>');
 });

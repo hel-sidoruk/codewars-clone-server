@@ -4,7 +4,7 @@ const Test = require('@codewars/test-compat');
 
 const generateName = functionsToTest['586a933fc66d187b6e00031a'];
 
-describe('Tests', () => {
+describe('Fixed tests', () => {
   it('test', () => {
     for (let i = 0; i < 10; i++) {
       let name = generateName();

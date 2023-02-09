@@ -4,13 +4,16 @@ const functionsToTest = require('./functionsToTest');
 
 const isLeapYear = functionsToTest['526c7363236867513f0005ca'];
 
-describe('leap year', function () {
+describe('Fixed tests', function () {
   it('Year 1000 is not leap', function () {
     assert.strictEqual(isLeapYear(1000), false, 'Year 1000');
   });
   it('Year 1200 is leap', function () {
     assert.strictEqual(isLeapYear(1200), true, 'Year 1000');
   });
+});
+
+describe('More tests', function () {
   it('Year 1234 is not leap', function () {
     assert.strictEqual(isLeapYear(1234), false, 'Year 1234');
   });

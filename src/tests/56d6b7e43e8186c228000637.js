@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const colourAssociation = functionsToTest['56d6b7e43e8186c228000637'];
 
-describe('Basic test', () => {
+describe('Fixed tests', () => {
   it('Should pass basic tests', () => {
     assert.deepEqual(
       colourAssociation([

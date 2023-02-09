@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const getLengthOfMissingArray = functionsToTest['57b6f5aadb5b3d0ae3000611'];
 
-describe('FixedTests', function () {
+describe('Fixed tests', function () {
   it('Should pass fixed tests', function () {
     assert.strictEqual(
       getLengthOfMissingArray([[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]]),

@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const squaresNeeded = functionsToTest['5b0d67c1cb35dfa10b0022c7'];
 
-describe('Basic tests', () => {
+describe('Fixed tests', () => {
   assert.equal(squaresNeeded(0), 0);
   assert.equal(squaresNeeded(1), 1);
   assert.equal(squaresNeeded(2), 2);

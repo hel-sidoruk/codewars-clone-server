@@ -4,8 +4,8 @@ const functionsToTest = require('./functionsToTest');
 
 const removeChar = functionsToTest['56bc28ad5bdaeb48760009b0'];
 
-describe('Tests', () => {
-  it('Fixed Tests', () => {
+describe('Fixed', () => {
+  it('tests', () => {
     assert.strictEqual(removeChar('eloquent'), 'loquen');
     assert.strictEqual(removeChar('country'), 'ountr');
     assert.strictEqual(removeChar('person'), 'erso');

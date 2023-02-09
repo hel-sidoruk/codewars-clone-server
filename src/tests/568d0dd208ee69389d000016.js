@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const rentalCarCost = functionsToTest['568d0dd208ee69389d000016'];
 
-describe('Regular Tests:', function () {
+describe('Fixed tests', function () {
   it('Should work for under 3 days:', function () {
     assert.strictEqual(rentalCarCost(1), 40);
     assert.strictEqual(rentalCarCost(2), 80);

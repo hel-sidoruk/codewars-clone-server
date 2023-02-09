@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const unluckyDays = functionsToTest['56eb0be52caf798c630013c0'];
 
-describe('Basic Tests', () => {
+describe('Fixed Tests', () => {
   it(`Testing for year 2819: should be 2`, () => {
     assert.strictEqual(unluckyDays(2819), 2, 'should be: 2');
   });

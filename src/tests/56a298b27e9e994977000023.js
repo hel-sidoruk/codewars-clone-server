@@ -56,7 +56,7 @@ describe('Check rules', function () {
   });
 });
 
-describe('Simple tests', function () {
+describe('Fixed tests', function () {
   let testArray, result;
 
   before(function () {

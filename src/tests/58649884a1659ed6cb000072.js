@@ -4,13 +4,15 @@ const functionsToTest = require('./functionsToTest');
 
 const updateLight = functionsToTest['58649884a1659ed6cb000072'];
 
-describe('Thinkful - Logic Drills: Traffic light', () => {
+describe('Fixed tests', () => {
   it('Testing for fixed tests', () => {
     assert.strictEqual(updateLight('green'), 'yellow');
     assert.strictEqual(updateLight('yellow'), 'red');
     assert.strictEqual(updateLight('red'), 'green');
   });
+});
 
+describe('Thinkful - Logic Drills: Traffic light', () => {
   it('Random tests', () => {
     let colors = ['green', 'yellow', 'red'],
       color,

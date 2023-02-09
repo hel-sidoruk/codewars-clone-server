@@ -4,7 +4,7 @@ const Test = require('@codewars/test-compat');
 
 const getDecimal = functionsToTest['586e4c61aa0428f04e000069'];
 
-describe('getDecimal', function () {
+describe('Fixed tests', function () {
   let assertFuzzyEquals = function (actual, expected, msg) {
     let inrange = Math.abs(actual - expected) <= 1e-7;
     Test.expect(
@@ -27,7 +27,20 @@ describe('getDecimal', function () {
   it('returns decimal part from 4.5 as 0.5', function () {
     assertFuzzyEquals(getDecimal(4.5), 0.5);
   });
+});
 
+describe('getDecimal', function () {
+  let assertFuzzyEquals = function (actual, expected, msg) {
+    let inrange = Math.abs(actual - expected) <= 1e-7;
+    Test.expect(
+      inrange,
+      msg ||
+        'Expected value near ' +
+          expected.toExponential(13) +
+          ', but got ' +
+          actual.toExponential(13)
+    );
+  };
   it('returns the decimal part of 100 random numbers', function () {
     const solution = (n) => {
       let str = '' + n,

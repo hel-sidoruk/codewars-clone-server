@@ -5,7 +5,7 @@ const _ = require('lodash');
 
 const function2SquaringAnArgument = functionsToTest['523b623152af8a30c6000027'];
 
-describe('Sample tests', () => {
+describe('Fixed tests', () => {
   it('2 squared equals 4', () => {
     assert.strictEqual(function2SquaringAnArgument(2), 4);
   });

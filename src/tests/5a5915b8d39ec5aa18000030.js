@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const findMissing = functionsToTest['5a5915b8d39ec5aa18000030'];
 
-describe('Basic tests', function () {
+describe('Fixed tests', function () {
   it('tests', () => {
     assert.strictEqual(findMissing([1, 2, 3], [1, 3]), 2);
     assert.strictEqual(findMissing([6, 1, 3, 6, 8, 2], [3, 6, 6, 1, 2]), 8);

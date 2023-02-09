@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const countBits = functionsToTest['526571aae218b8ee490006f4'];
 
-describe('Basic tests', () => {
+describe('Fixed tests', () => {
   it('Testing for fixed tests', () => {
     assert.strictEqual(countBits(0), 0);
     assert.strictEqual(countBits(4), 1);

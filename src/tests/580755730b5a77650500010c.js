@@ -5,7 +5,7 @@ const functionsToTest = require('./functionsToTest');
 
 const sortMyString = functionsToTest['580755730b5a77650500010c'];
 
-describe('Static Tests', function () {
+describe('Fixed Tests', function () {
   it('tests', function () {
     assert.strictEqual(
       sortMyString('Wolfeschlegelsteinhausenbergerdorff'),

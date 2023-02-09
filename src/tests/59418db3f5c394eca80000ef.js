@@ -93,7 +93,7 @@ const _describes = [
     }),
 ];
 
-describe('#find', function () {
+describe('Fixed tests', function () {
   _describes.forEach((x) => x());
 });
 describe('random test cases', () => {

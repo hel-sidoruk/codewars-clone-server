@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const cyclops = functionsToTest['56b0bc0826814364a800005a'];
 
-describe('Cyclops', function () {
+describe('Fixed tests', function () {
   it('basic tests', function () {
     assert.strictEqual(cyclops(1), false);
     assert.strictEqual(cyclops(5), true);
@@ -17,6 +17,9 @@ describe('Cyclops', function () {
     assert.strictEqual(cyclops(666), false);
     assert.strictEqual(cyclops(42), false);
   });
+});
+
+describe('Cyclops', function () {
   it('random tests', function () {
     const sol = (n, b = n.toString(2)) =>
       [...b].filter((x) => !+x) == '0' && b === [...b].reverse().join``;

@@ -19,7 +19,7 @@ function doTest(date, expected) {
   approximately(actual, expected, DELTA, log);
 }
 
-describe('Tests', () => {
+describe('Fixed tests', () => {
   it('sample tests', () => {
     doTest(makeDate(0, 0), 0.0);
     doTest(makeDate(12, 0), 0.0);
@@ -33,7 +33,9 @@ describe('Tests', () => {
     doTest(makeDate(7, 15), 2.2252947962927703);
     doTest(makeDate(6, 5), 2.6616271092913526);
   });
+});
 
+describe('Tests', () => {
   function solution(date) {
     let full = Math.PI * 2,
       minutes = date.getMinutes(),

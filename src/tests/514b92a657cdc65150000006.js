@@ -11,7 +11,7 @@ function test(n, expected) {
   });
 }
 
-describe('basic tests', function () {
+describe('Fixed tests', function () {
   test(10, 23);
   test(20, 78);
   test(200, 9168);

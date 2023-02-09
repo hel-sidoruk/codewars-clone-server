@@ -4,7 +4,7 @@ const Test = require('@codewars/test-compat');
 
 const once = functionsToTest['5307ff5b588fe6d7000000a5'];
 
-describe('Tests', () => {
+describe('Fixed tests', () => {
   it('This should only be called once and do nothing the second time', () => {
     let f = once(function () {
       throw 'This should only be called once';
@@ -39,6 +39,27 @@ describe('Tests', () => {
       'Should return undefined the second time.'
     );
   });
+  it('Testing a random number of arguments.', () => {
+    let f = once(Math.min);
+    let args = [];
+    for (let i = 0; i < 10 + 10 * Math.random(); i++) {
+      args.push(Math.random());
+    }
+
+    Test.assertEquals(
+      f.apply(null, args),
+      Math.min.apply(null, args),
+      'Testing a random number of arguments.'
+    );
+    Test.assertEquals(
+      f.apply(null, args),
+      undefined,
+      'Should return undefined the second time.'
+    );
+  });
+});
+
+describe('Random tests', () => {
   it('Testing a random number of arguments.', () => {
     let f = once(Math.min);
     let args = [];

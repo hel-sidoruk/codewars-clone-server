@@ -30,8 +30,7 @@ function fizzbuzzRandom(n) {
 
   return arr;
 }
-
-describe('Fizzbuzz', function () {
+describe('Fixed tests', function () {
   it('Should fizzify 10 numbers correctly', function () {
     let expected = [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz'];
     Test.assertEquals(
@@ -40,7 +39,8 @@ describe('Fizzbuzz', function () {
       'Fails with 10 numbers!'
     );
   });
-
+});
+describe('Fizzbuzz', function () {
   it('Should fizzify 30 numbers correctly', function () {
     let expected = [
       1,

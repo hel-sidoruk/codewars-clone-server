@@ -16,7 +16,10 @@ function onConnect(wsClient) {
   };
 
   wsClient.on('message', (message) => {
-    const { kataId, solution } = JSON.parse(message);
+    const { kataId, solution, testSuites } = JSON.parse(message);
+
+    if (testSuites === 'fixed') mochaInstance.grep(/Fixed tests/i);
+
     const fn = new Function('return ' + solution)();
     if (!Object.keys(functionsToTest).includes(kataId)) {
       wsClient.send('NO TESTS FOR THIS KATA');

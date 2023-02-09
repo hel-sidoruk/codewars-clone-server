@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const counter = functionsToTest['60edafd71dad1800563cf933'];
 
-describe('counter', () => {
+describe('Fixed tests', () => {
   it('should return a function', () => {
     expect(typeof counter()).to.equal('function');
   });

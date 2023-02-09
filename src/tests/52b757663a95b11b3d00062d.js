@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const toWeirdCase = functionsToTest['52b757663a95b11b3d00062d'];
 
-describe('should return the correct value for a single word', function () {
+describe('Fixed tests', function () {
   let words = ['This', 'is', 'a', 'test', 'Looks', 'like', 'you', 'passed'];
   for (let i = 0; i < words.length; i++) {
     it('Word = ' + words[i], function () {

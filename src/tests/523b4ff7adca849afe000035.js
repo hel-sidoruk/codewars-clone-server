@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const greet = functionsToTest['523b4ff7adca849afe000035'];
 
-describe('Testing function', function () {
+describe('Fixed tests', function () {
   it('Is it a function?', function () {
     assert.strictEqual(typeof greet, 'function', 'greet should be a function');
   });

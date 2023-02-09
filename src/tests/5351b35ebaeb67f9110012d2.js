@@ -4,7 +4,7 @@ const Test = require('@codewars/test-compat');
 
 const createSecretHolder = functionsToTest['5351b35ebaeb67f9110012d2'];
 
-describe('The secret holder should ', function () {
+describe('Fixed tests ', function () {
   let isFunc = function (functionToCheck) {
       let getType = {};
       return (

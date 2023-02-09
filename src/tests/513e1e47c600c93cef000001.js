@@ -5,7 +5,7 @@ const functionsToTest = require('./functionsToTest');
 
 const Animal = functionsToTest['513e1e47c600c93cef000001'];
 
-describe('Tests', () => {
+describe('Fixed tTests', () => {
   it('animal.name should return correct value', () => {
     let cat = new Animal('Sam', 'cat');
     Test.expect(cat.name == 'Sam', 'animal.name does not return correct value');

@@ -4,15 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const whatTimeIsIt = functionsToTest['59752e1f064d1261cb0000ec'];
 
-describe('Solution Tests', function () {
-  let dinglemouseAnswer20170727_whatTimeIsIt = function (angle) {
-    let min1 = Math.floor((60 * 12 * angle) / 360);
-    let hr = Math.floor(min1 / 60);
-    let min = min1 - hr * 60;
-    if (hr == 0) hr = 12;
-    return (hr < 10 ? '0' + hr : hr) + ':' + (min < 10 ? '0' + min : min);
-  };
-
+describe('Fixed Tests', function () {
   it('ex1', function () {
     assert.strictEqual(whatTimeIsIt(0), '12:00');
   });
@@ -52,6 +44,16 @@ describe('Solution Tests', function () {
   it('60 degrees', function () {
     assert.strictEqual(whatTimeIsIt(60), '02:00');
   });
+});
+
+describe('Solution Tests', function () {
+  let dinglemouseAnswer20170727_whatTimeIsIt = function (angle) {
+    let min1 = Math.floor((60 * 12 * angle) / 360);
+    let hr = Math.floor(min1 / 60);
+    let min = min1 - hr * 60;
+    if (hr == 0) hr = 12;
+    return (hr < 10 ? '0' + hr : hr) + ':' + (min < 10 ? '0' + min : min);
+  };
 
   it('random', function () {
     for (let r = 0; r < 100; r++) {

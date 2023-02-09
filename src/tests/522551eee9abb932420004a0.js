@@ -4,8 +4,8 @@ const functionsToTest = require('./functionsToTest');
 
 const nthFibo = functionsToTest['522551eee9abb932420004a0'];
 
-describe('Tests', function () {
-  it('Fixed tests', function () {
+describe('Fixed tests', function () {
+  it('tests', function () {
     assert.strictEqual(nthFibo(1), 0, '1-st Fibo');
     assert.strictEqual(nthFibo(2), 1, '2-nd Fibo');
     assert.strictEqual(nthFibo(3), 1, '3-rd Fibo');
@@ -32,7 +32,10 @@ describe('Tests', function () {
     assert.strictEqual(nthFibo(24), 28657, '24-th Fibo');
     assert.strictEqual(nthFibo(25), 46368, '25-th Fibo');
   });
-  it('Random tests', function () {
+});
+
+describe('Random tests', function () {
+  it('tests', function () {
     const ref = (n) => (n === 1 ? 0 : n === 2 ? 1 : ref(n - 1) + ref(n - 2));
     const M = 40;
     for (let i = 0; i < 10; i++) {

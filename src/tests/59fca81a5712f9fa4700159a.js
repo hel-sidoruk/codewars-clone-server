@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const toBinary = functionsToTest['59fca81a5712f9fa4700159a'];
 
-describe('Basic tests', () => {
+describe('Fixed tests', () => {
   it('Testing for fixed tests', () => {
     assert.strictEqual(toBinary(1), 1);
     assert.strictEqual(toBinary(2), 10);

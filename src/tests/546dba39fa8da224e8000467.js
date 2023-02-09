@@ -15,7 +15,7 @@ let randomString = function (n) {
   return s;
 };
 
-describe('runLengthEncoding', function () {
+describe('Fixed tests', function () {
   it('should work for some examples', function () {
     assert.deepEqual(runLengthEncoding(''), []);
     assert.deepEqual(runLengthEncoding('abc'), [

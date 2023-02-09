@@ -41,39 +41,37 @@ function infoMaker() {
   return [innocent, killed, murderer];
 }
 
-describe('Killer', function () {
-  describe('Basic tests', function () {
-    it('The killer is James!', function () {
-      assert.deepEqual(
-        killer(
-          {
-            James: ['Jacob', 'Bill', 'Lucas'],
-            Johnny: ['David', 'Kyle', 'Lucas'],
-            Peter: ['Lucy', 'Kyle'],
-          },
-          ['Lucas', 'Bill']
-        ),
-        'James'
-      );
-    });
-
-    it('The killer is Megan!', function () {
-      assert.deepEqual(
-        killer({ Brad: [], Megan: ['Ben', 'Kevin'], Finn: [] }, ['Ben']),
-        'Megan'
-      );
-    });
+describe('Fixed tests', function () {
+  it('The killer is James!', function () {
+    assert.deepEqual(
+      killer(
+        {
+          James: ['Jacob', 'Bill', 'Lucas'],
+          Johnny: ['David', 'Kyle', 'Lucas'],
+          Peter: ['Lucy', 'Kyle'],
+        },
+        ['Lucas', 'Bill']
+      ),
+      'James'
+    );
   });
 
-  describe('Random tests', function () {
-    for (let i = 0; i < 100; i++) {
-      let inps = infoMaker();
-      let suspects = inps[0];
-      let killed = inps[1];
-      let murderer = inps[2];
-      it('The killer is ' + murderer + '!', function () {
-        assert.deepEqual(killer(suspects, killed), murderer);
-      });
-    }
+  it('The killer is Megan!', function () {
+    assert.deepEqual(
+      killer({ Brad: [], Megan: ['Ben', 'Kevin'], Finn: [] }, ['Ben']),
+      'Megan'
+    );
   });
+});
+
+describe('Random tests', function () {
+  for (let i = 0; i < 100; i++) {
+    let inps = infoMaker();
+    let suspects = inps[0];
+    let killed = inps[1];
+    let murderer = inps[2];
+    it('The killer is ' + murderer + '!', function () {
+      assert.deepEqual(killer(suspects, killed), murderer);
+    });
+  }
 });

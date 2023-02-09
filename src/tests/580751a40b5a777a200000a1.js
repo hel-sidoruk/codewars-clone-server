@@ -5,7 +5,7 @@ const functionsToTest = require('./functionsToTest');
 
 const vowelOne = functionsToTest['580751a40b5a777a200000a1'];
 
-describe('vowelOne', () => {
+describe('Fixed tests', () => {
   it('should work for some examples', () => {
     assert.strictEqual(vowelOne('vowelOne'), '01010101');
     assert.strictEqual(vowelOne('123, arou'), '000001011');

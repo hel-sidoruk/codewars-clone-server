@@ -18,7 +18,7 @@ function generateAnswer(start, finish) {
   return jumps;
 }
 
-describe('Example test cases', function () {
+describe('Fixed tests', function () {
   it('Test case in description', function () {
     assert.strictEqual(solution(1, 5), 2);
   });

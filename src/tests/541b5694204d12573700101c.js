@@ -8,7 +8,7 @@ function print(a, b) {
   return a + ' -> ' + b;
 }
 
-describe('Tests', () => {
+describe('Fixed tests', () => {
   it('test', () => {
     assert.strictEqual(flip(print)(4, 5), '5 -> 4');
   });

@@ -6,11 +6,14 @@ const zeroFuel = functionsToTest['5861d28f124b35723e00005e'];
 
 const sol = (distance, mpg, fuelLeft) => distance <= mpg * fuelLeft;
 
-describe('zeroFill', function () {
+describe('Fixed tests', function () {
   it('Sample Tests', function () {
     assert.equal(zeroFuel(50, 25, 2), true);
     assert.equal(zeroFuel(100, 50, 1), false);
   });
+});
+
+describe('zeroFill', function () {
   it('Basic Tests', function () {
     assert.equal(zeroFuel(60, 30, 3), true);
     assert.equal(zeroFuel(70, 25, 1), false);

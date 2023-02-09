@@ -6,7 +6,7 @@ config.truncateThreshold = 0;
 
 const sortByBit = functionsToTest['59fa8e2646d8433ee200003f'];
 
-describe('Testing...', function () {
+describe('Fixed tests', function () {
   it('Basic Tests', function () {
     let a = [3, 8, 3, 6, 5, 7, 9, 1];
     sortByBit(a);

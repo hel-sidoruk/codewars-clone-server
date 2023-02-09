@@ -4,7 +4,13 @@ const functionsToTest = require('./functionsToTest');
 
 const perimeterSequence = functionsToTest['589519d1f0902e01af000054'];
 
-describe('Tests', () => {
+describe('Fixed tests', () => {
+  it('test', () => {
+    assert.strictEqual(perimeterSequence(1, 3), 12);
+  });
+});
+
+describe('Random tests', () => {
   let testFunction = function (a, n) {
     let solution = function (a, n) {
       return 4 * n * a;
@@ -13,10 +19,6 @@ describe('Tests', () => {
       assert.strictEqual(perimeterSequence(a, n), solution(a, n));
     });
   };
-
-  it('test', () => {
-    assert.strictEqual(perimeterSequence(1, 3), 12);
-  });
   for (let i = 0; i < 100; i++)
     testFunction(
       Math.floor(Math.random() * 10) + 1,

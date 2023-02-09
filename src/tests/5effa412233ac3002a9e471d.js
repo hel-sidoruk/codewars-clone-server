@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const add = functionsToTest['5effa412233ac3002a9e471d'];
 
-describe('Silly addition', () => {
+describe('Fixed tests', () => {
   it('Real addition', () => {
     assert.strictEqual(add(2, 11), 13);
     assert.strictEqual(add(0, 1), 1);

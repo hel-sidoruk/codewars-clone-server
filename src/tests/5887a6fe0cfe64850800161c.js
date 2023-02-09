@@ -4,13 +4,15 @@ const functionsToTest = require('./functionsToTest');
 
 const areaLargestSquare = functionsToTest['5887a6fe0cfe64850800161c'];
 
-describe('Testing --- Area largest square --- ', () => {
+describe('Fixed tests', () => {
   it('Basic tests', () => {
     assert.strictEqual(areaLargestSquare(5), 50);
     assert.strictEqual(areaLargestSquare(7), 98);
     assert.strictEqual(areaLargestSquare(15), 450);
   });
+});
 
+describe('Random tests', () => {
   it('Random testing', () => {
     let sol = (r) => 2 * Math.pow(r, 2);
 

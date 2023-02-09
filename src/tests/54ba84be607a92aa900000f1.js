@@ -4,7 +4,7 @@ const functionsToTest = require('./functionsToTest');
 
 const isIsogram = functionsToTest['54ba84be607a92aa900000f1'];
 
-describe('Basic tests', () => {
+describe('Fixed tests', () => {
   it('Testing for fixed tests', () => {
     assert.strictEqual(isIsogram('Dermatoglyphics'), true);
     assert.strictEqual(isIsogram('isogram'), true);
@@ -27,7 +27,9 @@ describe('Basic tests', () => {
       'an empty string is a valid isogram'
     );
   });
+});
 
+describe('More tests', () => {
   let lowers = 'abcdefghijklmnopqrstuvwxyz',
     uppers = lowers.toUpperCase();
   const rnd = function (x) {
@@ -37,7 +39,7 @@ describe('Basic tests', () => {
     return str[rnd(str.length)];
   };
 
-  it('More tests', () => {
+  it('tests', () => {
     assert.strictEqual(isIsogram(lowers), true);
     assert.strictEqual(isIsogram(uppers), true);
   });

@@ -5,7 +5,7 @@ const functionsToTest = require('./functionsToTest');
 
 const isPrime = functionsToTest['5262119038c0985a5b00029f'];
 
-describe('Basic', () => {
+describe('Fixed tests', () => {
   it('Basic tests', () => {
     assert.strictEqual(isPrime(0), false, '0 is not prime');
     assert.strictEqual(isPrime(1), false, '1 is not prime');
