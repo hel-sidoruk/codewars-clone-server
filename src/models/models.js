@@ -22,6 +22,12 @@ const Challenges = sequelize.define(
     rank: { type: DataTypes.STRING, allowNull: false },
     category: { type: DataTypes.STRING },
     tags: { type: DataTypes.ARRAY(DataTypes.STRING) },
+    initialSolution: {
+      type: DataTypes.STRING,
+      defaultValue: `function solution() {
+
+}`,
+    },
   },
   { timestamps: false }
 );
@@ -55,7 +61,11 @@ const Accounts = sequelize.define(
     id: { type: DataTypes.STRING, primaryKey: true, allowNull: false },
     username: { type: DataTypes.STRING, allowNull: false, unique: true },
     password: { type: DataTypes.STRING },
-    avatar: { type: DataTypes.STRING },
+    avatar: {
+      type: DataTypes.STRING,
+      defaultValue:
+        'https://www.codewars.com/packs/assets/profile-pic.f3a90aca.png',
+    },
     github: { type: DataTypes.STRING },
     solvedKatas: { type: DataTypes.ARRAY(DataTypes.STRING), defaultValue: [] },
     trainedKatas: { type: DataTypes.ARRAY(DataTypes.STRING), defaultValue: [] },
@@ -105,10 +115,22 @@ const Solutions = sequelize.define(
   { timestamps: false }
 );
 
+const Notifications = sequelize.define(
+  'notifications',
+  {
+    id: { type: DataTypes.STRING, primaryKey: true, allowNull: false },
+    username: { type: DataTypes.STRING, allowNull: false },
+    text: { type: DataTypes.TEXT, allowNull: false },
+    createdAt: { type: DataTypes.DATE, allowNull: false },
+  },
+  { timestamps: false }
+);
+
 module.exports = {
   Challenges,
   Users,
   Discuss,
   Accounts,
   Solutions,
+  Notifications,
 };
