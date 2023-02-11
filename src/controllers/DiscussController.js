@@ -8,6 +8,7 @@ class DiscussController {
       where: {
         kataId: id,
       },
+      order: [['createdAt', 'DESC']],
     });
     return res.json(comments);
   }
@@ -26,6 +27,7 @@ class DiscussController {
         spoiler: false,
         text: data.text,
         label: data.label,
+        avatar: data.avatar,
       });
 
       return res.json(comment);
@@ -46,6 +48,17 @@ class DiscussController {
           id: commentId,
         },
       });
+
+      return res.json({ status: 'ok' });
+    } catch (e) {
+      next(ApiError.badRequest(e.message));
+    }
+  }
+  async deleteComment(req, res, next) {
+    try {
+      const { commentId } = req.params;
+
+      await Discuss.destroy({ where: { id: commentId } });
 
       return res.json({ status: 'ok' });
     } catch (e) {

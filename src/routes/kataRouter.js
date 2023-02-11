@@ -10,6 +10,7 @@ router.get('/:id', KataController.getOne);
 router.get('/:id/discuss', DiscussController.getComments);
 router.post('/:id/discuss', DiscussController.createComment);
 router.patch('/:id/discuss/:commentId', DiscussController.updateComment);
+router.delete('/:id/discuss/:commentId', DiscussController.deleteComment);
 router.get('/:kataId/solutions', SolutionsController.getSolutions);
 router.post('/:kataId/solutions', SolutionsController.addSolution);
 router.patch(

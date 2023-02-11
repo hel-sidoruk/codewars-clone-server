@@ -25,6 +25,7 @@ Api for "RS Clone".
     - [Get Comments](https://github.com/hel-sidoruk/rs-clone-server#get-comments)
     - [Create Comment](https://github.com/hel-sidoruk/rs-clone-server#create-comment)
     - [Update Comment](https://github.com/hel-sidoruk/rs-clone-server#update-comment)
+    - [Delete Comment](https://github.com/hel-sidoruk/rs-clone-server#delete-comment)
 - **Solutions**
     - [Get Solutions](https://github.com/hel-sidoruk/rs-clone-server#get-solutions)
     - [Add Solution](https://github.com/hel-sidoruk/rs-clone-server#add-solution)
@@ -434,7 +435,8 @@ Returns json data about all comments for specified kata.
           "votes": 2,
           "createdAt": "2023-01-26T09:44:26.477Z",
           "spoiler": false,
-          "label": "Question"
+          "label": "Question",
+          "avatar": "https://avatar.png"
         }
       ]
     ```
@@ -492,7 +494,8 @@ Creates new comment for specified kata.
         "votes": 2,
         "createdAt": "2023-01-26T09:44:26.477Z",
         "spoiler": false,
-        "label": "Question"
+        "label": "Question",
+        "avatar": "https://avatar.png"
       }
     ```
 
@@ -532,8 +535,42 @@ Updates specified comment in a database.
         votes?: number,
         spoiler?: boolean,
         text?: string,
+        label?: 'Question' | 'Suggestion' | 'Issue' | null,
       }
     ```
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+  **Content:**
+  ```json
+    {
+      "status": "ok"
+    }
+  ```
+
+</details>
+
+**Delete Comment**
+----
+Deletes specified comment in a database.
+
+<details>
+
+* **URL**
+
+    /api/kata/:id/discuss/:commentId
+
+* **Method:**
+
+    `DELETE`
+
+*  **URL Params**
+
+    **Required:**
+
+    `id=[string]`
+    `commentId=[number]`
 
 * **Success Response:**
 
