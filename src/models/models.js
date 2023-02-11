@@ -97,6 +97,7 @@ const Discuss = sequelize.define(
     createdAt: { type: DataTypes.DATE, allowNull: false },
     spoiler: { type: DataTypes.BOOLEAN, defaultValue: false },
     label: { type: DataTypes.STRING },
+    avatar: { type: DataTypes.STRING },
   },
   { timestamps: false }
 );
