@@ -21,6 +21,7 @@ const Challenges = sequelize.define(
     createdAt: { type: DataTypes.DATE },
     rank: { type: DataTypes.STRING, allowNull: false },
     category: { type: DataTypes.STRING },
+    newTags: { type: DataTypes.STRING },
     tags: { type: DataTypes.ARRAY(DataTypes.STRING) },
     initialSolution: {
       type: DataTypes.STRING,
