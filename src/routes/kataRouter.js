@@ -3,9 +3,11 @@ const router = new Router();
 const KataController = require('../controllers/KataController');
 const DiscussController = require('../controllers/DiscussController');
 const SolutionsController = require('../controllers/SolutionsController');
+const auth = require('../middleware/authMiddleware');
 
 router.post('/', KataController.create);
-router.get('/', KataController.getAll);
+router.get('/', auth, KataController.getAll);
+router.get('/similar', KataController.getSimilar);
 router.get('/:id', KataController.getOne);
 router.get('/:id/discuss', DiscussController.getComments);
 router.post('/:id/discuss', DiscussController.createComment);
