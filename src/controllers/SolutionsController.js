@@ -18,6 +18,12 @@ class SolutionsController {
     return res.json(solutions);
   }
 
+  async getUserSolutions(req, res) {
+    const { username } = req.user;
+    const solutions = await Solutions.findAll({ where: { username } });
+    return res.json(solutions);
+  }
+
   async addSolution(req, res, next) {
     try {
       const { kataId } = req.params;

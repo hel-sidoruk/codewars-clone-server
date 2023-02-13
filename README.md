@@ -15,6 +15,7 @@ Api for "RS Clone".
 - **Katas**
     - [Get Katas](https://github.com/hel-sidoruk/rs-clone-server#get-katas)
     - [Get Kata](https://github.com/hel-sidoruk/rs-clone-server#get-kata)
+    - [Get Random Katas](https://github.com/hel-sidoruk/rs-clone-server#get-random-katas)
     - [Create Kata](https://github.com/hel-sidoruk/rs-clone-server#create-kata)
 - **Users**
     - [Get Users](https://github.com/hel-sidoruk/rs-clone-server#get-users)
@@ -116,6 +117,52 @@ Returns json data about specified kata.
 *  **URL Params**
 
     **Required:**
+
+    `id=[string]`
+
+* **Success Response:**
+
+  * **Code:** 200 OK <br />
+    **Content:**
+    ```json
+      {
+        "id": "583710ccaa6717322c000105",
+        "name": "Simple multiplication",
+        "description": "This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.",
+        "totalAttempts": 134553,
+        "totalCompleted": 90509,
+        "totalStars": 301,
+        "slug": "simple-multiplication",
+        "createdBy": "grace555",
+        "publishedAt": "2016-11-24T16:10:57.141Z",
+        "createdAt": "2016-11-24T16:09:48.508Z",
+        "rank": "8 kyu",
+        "category": "reference",
+        "tags": [ "Fundamentals" ]
+      }
+    ```
+
+</details>
+
+**Get Random Katas**
+----
+Returns json data about specified kata.
+
+<details>
+
+* **URL**
+
+    /api/kata/random
+
+* **Method:**
+
+    `GET`
+
+* **Headers:**
+
+    None
+
+*  **URL Params**
 
     `id=[string]`
 
