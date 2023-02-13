@@ -46,19 +46,29 @@ class KataController {
     return res.json(katas);
   }
 
-  async getSimilar(req, res) {
-    const { limit, tags } = req.query;
-    const tagsArr = tags.split(',');
+  async getRandom(req, res) {
+    const { limit, tags, id_only } = req.query;
+
+    if (tags) {
+      const tagsArr = tags.split(',');
+      const katas = await Challenges.findAll({
+        attributes: { exclude: ['newTags'] },
+        limit,
+        where: {
+          newTags: {
+            [Op.or]: tagsArr.map((el) => ({ [Op.iLike]: `%${el}%` })),
+          },
+        },
+        order: Challenges.sequelize.random(),
+      });
+      return res.json(katas);
+    }
 
     const katas = await Challenges.findAll({
-      attributes: { exclude: ['newTags'] },
+      attributes: id_only ? ['id'] : { exclude: ['newTags'] },
       limit,
-      where: {
-        newTags: { [Op.or]: tagsArr.map((el) => ({ [Op.iLike]: `%${el}%` })) },
-      },
       order: Challenges.sequelize.random(),
     });
-
     return res.json(katas);
   }
 

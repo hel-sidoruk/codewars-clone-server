@@ -7,7 +7,7 @@ const auth = require('../middleware/authMiddleware');
 
 router.post('/', KataController.create);
 router.get('/', auth, KataController.getAll);
-router.get('/similar', KataController.getSimilar);
+router.get('/random', KataController.getRandom);
 router.get('/:id', KataController.getOne);
 router.get('/:id/discuss', DiscussController.getComments);
 router.post('/:id/discuss', DiscussController.createComment);
