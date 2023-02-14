@@ -35,6 +35,8 @@ class SolutionsController {
       const solution = await Solutions.create({
         id: nanoid(),
         kataId,
+        kataRank: data.rank,
+        kataName: data.name,
         username: data.username,
         solution: data.solution,
         createdAt: new Date(Date.now()).toISOString(),

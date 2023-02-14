@@ -108,6 +108,8 @@ const Solutions = sequelize.define(
   {
     id: { type: DataTypes.STRING, primaryKey: true, allowNull: false },
     kataId: { type: DataTypes.STRING, allowNull: false },
+    kataRank: { type: DataTypes.STRING, allowNull: false },
+    kataName: { type: DataTypes.STRING, allowNull: false },
     username: { type: DataTypes.STRING, allowNull: false },
     solution: { type: DataTypes.TEXT, allowNull: false },
     createdAt: { type: DataTypes.DATE, allowNull: false },
