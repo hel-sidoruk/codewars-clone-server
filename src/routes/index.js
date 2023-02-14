@@ -5,6 +5,7 @@ const authRouter = require('./authRouter');
 const accountRouter = require('./accountRouter');
 const notificationsRouter = require('./notificationsRouter');
 const solutionsRouter = require('./solutionsRouter');
+const followersRouter = require('./followersRouter');
 
 const router = new Router();
 
@@ -14,5 +15,6 @@ router.use('/auth', authRouter);
 router.use('/account', accountRouter);
 router.use('/notifications', notificationsRouter);
 router.use('/solutions', solutionsRouter);
+router.use('/followers', followersRouter);
 
 module.exports = router;

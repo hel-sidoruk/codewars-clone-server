@@ -128,6 +128,19 @@ const Notifications = sequelize.define(
   { timestamps: false }
 );
 
+const Followers = sequelize.define(
+  'followers',
+  {
+    id: { type: DataTypes.STRING, primaryKey: true, allowNull: false },
+    username: { type: DataTypes.STRING, allowNull: false },
+    followUser: { type: DataTypes.STRING, allowNull: false },
+    rank: { type: DataTypes.STRING, allowNull: false },
+    honor: { type: DataTypes.INTEGER, allowNull: false },
+    clan: { type: DataTypes.STRING },
+  },
+  { timestamps: false }
+);
+
 module.exports = {
   Challenges,
   Users,
@@ -135,4 +148,5 @@ module.exports = {
   Accounts,
   Solutions,
   Notifications,
+  Followers,
 };
