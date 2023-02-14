@@ -15,6 +15,6 @@ router.use('/auth', authRouter);
 router.use('/account', accountRouter);
 router.use('/notifications', notificationsRouter);
 router.use('/solutions', solutionsRouter);
-router.use('/followers', followersRouter);
+router.use('/social', followersRouter);
 
 module.exports = router;
