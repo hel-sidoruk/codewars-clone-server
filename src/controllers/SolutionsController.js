@@ -20,7 +20,10 @@ class SolutionsController {
 
   async getUserSolutions(req, res) {
     const { username } = req.user;
-    const solutions = await Solutions.findAll({ where: { username } });
+    const solutions = await Solutions.findAll({
+      where: { username },
+      order: [['createdAt', 'DESC']],
+    });
     return res.json(solutions);
   }
 
