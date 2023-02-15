@@ -1,11 +1,34 @@
 const ApiError = require('../error/ApiError');
 const { Accounts, Challenges, Users } = require('../models/models');
+const path = require('path');
+const { nanoid } = require('nanoid');
 
 class AccountController {
   async getInfo(req, res) {
     const { username } = req.user;
     const data = await Accounts.findOne({ where: { username } });
     return res.json(data);
+  }
+
+  async edit(req, res, next) {
+    try {
+      const { username } = req.user;
+      const { newUsername, name, clan } = req.body;
+      const files = req.files;
+      const accountUpdates = { username: newUsername };
+      const userUpdates = { username: newUsername, name, clan };
+      if (files) {
+        const filename = `${nanoid()}.jpg`;
+        files.avatarImage.mv(path.resolve(__dirname, '..', 'assets', filename));
+        userUpdates.avatar = `${process.env.HOST}/${filename}`;
+      }
+      await Accounts.update(accountUpdates, { where: { username } });
+      await Users.update(userUpdates, { where: { username } });
+
+      return res.json(userUpdates);
+    } catch (e) {
+      next(ApiError.badRequest(e.message));
+    }
   }
 
   async addSolvedKata(req, res, next) {
@@ -24,11 +47,7 @@ class AccountController {
 
       await Accounts.update(
         { solvedKatas, trainedKatas },
-        {
-          where: {
-            username,
-          },
-        }
+        { where: { username } }
       );
 
       return res.json({ status: 'ok' });
@@ -50,14 +69,7 @@ class AccountController {
 
       trainedKatas.push(kataId);
 
-      await Accounts.update(
-        { trainedKatas },
-        {
-          where: {
-            username,
-          },
-        }
-      );
+      await Accounts.update({ trainedKatas }, { where: { username } });
 
       return res.json({ status: 'ok' });
     } catch (e) {
@@ -78,14 +90,7 @@ class AccountController {
 
       forfeitedKatas.push(kataId);
 
-      await Accounts.update(
-        { forfeitedKatas },
-        {
-          where: {
-            username,
-          },
-        }
-      );
+      await Accounts.update({ forfeitedKatas }, { where: { username } });
 
       return res.json({ status: 'ok' });
     } catch (e) {
@@ -106,14 +111,7 @@ class AccountController {
         starredKatas = starredKatas.filter((el) => el !== kataId);
       else starredKatas.push(kataId);
 
-      await Accounts.update(
-        { starredKatas },
-        {
-          where: {
-            username,
-          },
-        }
-      );
+      await Accounts.update({ starredKatas }, { where: { username } });
 
       await Challenges.update(
         { totalStars: starsCount },

@@ -8,9 +8,13 @@ const cors = require('cors');
 const router = require('./routes/index');
 const errorHandler = require('./middleware/ErrorHandlingMiddleware');
 const { wsServer, onConnect } = require('./ws/webSocket');
+const fileUpload = require('express-fileupload');
+const path = require('path');
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.resolve(__dirname, 'assets')));
+app.use(fileUpload({}));
 app.use('/api', router);
 
 app.use(errorHandler);
