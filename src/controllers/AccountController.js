@@ -1,5 +1,5 @@
 const ApiError = require('../error/ApiError');
-const { Accounts, Challenges } = require('../models/models');
+const { Accounts, Challenges, Users } = require('../models/models');
 
 class AccountController {
   async getInfo(req, res) {
@@ -121,6 +121,18 @@ class AccountController {
           where: { id: kataId },
         }
       );
+
+      return res.json({ status: 'ok' });
+    } catch (e) {
+      next(ApiError.badRequest(e.message));
+    }
+  }
+
+  async delete(req, res, next) {
+    try {
+      const { username } = req.user;
+      await Accounts.destroy({ where: { username } });
+      await Users.destroy({ where: { username } });
 
       return res.json({ status: 'ok' });
     } catch (e) {
