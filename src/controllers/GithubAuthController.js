@@ -32,12 +32,12 @@ class GithubAuthController {
           ? codewarsUser.leaderboardPosition
           : null,
         score: codewarsUser ? codewarsUser.ranks.overall.score : 0,
+        avatar: avatar_url,
       });
 
       const account = await Accounts.create({
         id: id.toString(),
         username: login,
-        avatar: avatar_url,
         github: login,
       });
 

@@ -50,6 +50,11 @@ const Users = sequelize.define(
     totalCompleted: { type: DataTypes.INTEGER },
     rank: { type: DataTypes.STRING },
     score: { type: DataTypes.INTEGER },
+    avatar: {
+      type: DataTypes.STRING,
+      defaultValue:
+        'https://www.codewars.com/packs/assets/profile-pic.f3a90aca.png',
+    },
   },
   {
     timestamps: false,
@@ -62,11 +67,6 @@ const Accounts = sequelize.define(
     id: { type: DataTypes.STRING, primaryKey: true, allowNull: false },
     username: { type: DataTypes.STRING, allowNull: false, unique: true },
     password: { type: DataTypes.STRING },
-    avatar: {
-      type: DataTypes.STRING,
-      defaultValue:
-        'https://www.codewars.com/packs/assets/profile-pic.f3a90aca.png',
-    },
     github: { type: DataTypes.STRING },
     solvedKatas: { type: DataTypes.ARRAY(DataTypes.STRING), defaultValue: [] },
     trainedKatas: { type: DataTypes.ARRAY(DataTypes.STRING), defaultValue: [] },
@@ -139,6 +139,16 @@ const Followers = sequelize.define(
     rank: { type: DataTypes.STRING, allowNull: false },
     honor: { type: DataTypes.INTEGER, allowNull: false },
     clan: { type: DataTypes.STRING },
+    followerAvatar: {
+      type: DataTypes.STRING,
+      defaultValue:
+        'https://www.codewars.com/packs/assets/profile-pic.f3a90aca.png',
+    },
+    followingAvatar: {
+      type: DataTypes.STRING,
+      defaultValue:
+        'https://www.codewars.com/packs/assets/profile-pic.f3a90aca.png',
+    },
   },
   { timestamps: false }
 );

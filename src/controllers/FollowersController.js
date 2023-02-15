@@ -20,7 +20,8 @@ class FollowersController {
   async create(req, res, next) {
     try {
       const { username } = req.user;
-      const { followUser, rank, honor, clan } = req.body;
+      const { followUser, rank, honor, clan, followerAvatar, followingAvatar } =
+        req.body;
 
       const data = await Followers.create({
         id: nanoid(),
@@ -29,6 +30,8 @@ class FollowersController {
         rank,
         honor,
         clan,
+        followerAvatar,
+        followingAvatar,
       });
 
       return res.json(data);
