@@ -14,6 +14,7 @@ class SolutionsController {
     }
     const solutions = await Solutions.findAll({
       where: { kataId },
+      order: [['createdAt', 'DESC']],
     });
     return res.json(solutions);
   }
