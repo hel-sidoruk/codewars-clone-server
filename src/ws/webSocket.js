@@ -2,9 +2,9 @@ const WebSocket = require('ws');
 const WS_PORT = process.env.WS_PORT || 9000;
 const wsServer = new WebSocket.Server({ port: WS_PORT });
 const Mocha = require('mocha');
-
 const path = require('path');
 const functionsToTest = require('../tests/functionsToTest');
+const { parseFunction } = require('../utils/parseFunction');
 
 function onConnect(wsClient) {
   const mochaInstance = new Mocha();
@@ -16,24 +16,33 @@ function onConnect(wsClient) {
   };
 
   wsClient.on('message', (message) => {
-    const { kataId, solution, testSuites } = JSON.parse(message);
+    let { kataId, solution, testSuites } = JSON.parse(message);
 
     if (testSuites === 'fixed') mochaInstance.grep(/Fixed tests/i);
 
-    const fn = new Function('return ' + solution)();
+    try {
+      if (solution.match(/^const|^let|^var/))
+        solution = parseFunction(solution);
+      const fn = new Function('return ' + solution)();
+      if (!(typeof fn === 'function')) {
+        wsClient.send('THIS IS NOT A FUNCTION');
+        wsClient.close();
+        return;
+      }
+      functionsToTest[kataId] = fn;
+      fn();
+    } catch (error) {
+      wsClient.send('-red' + error.toString());
+      wsClient.send('--failure--');
+      wsClient.close();
+      return;
+    }
     if (!Object.keys(functionsToTest).includes(kataId)) {
       wsClient.send('NO TESTS FOR THIS KATA');
       wsClient.close();
       return;
     }
 
-    if (!(typeof fn === 'function')) {
-      wsClient.send('THIS IS NOT A FUNCTION');
-      wsClient.close();
-      return;
-    }
-
-    functionsToTest[kataId] = fn;
     mochaInstance.addFile(path.resolve(__dirname, `../tests/${kataId}.js`));
     mochaInstance
       .run((failures) => {
