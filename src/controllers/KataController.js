@@ -5,13 +5,13 @@ const { getSortOption } = require('../utils/getSortOption');
 
 class KataController {
   async getAll(req, res) {
-    let { page } = req.query;
+    let { page, limit } = req.query;
     const { search, sort, difficulty, tags, progress } = req.query;
     const { username } = req.user;
     const order = getSortOption(sort);
 
     if (!page) page = 1;
-    const limit = 10;
+    limit = limit || 10;
     const offset = page * limit - limit;
 
     const account = await Accounts.findOne({ where: { username } });
@@ -75,7 +75,9 @@ class KataController {
   async getOne(req, res) {
     const { id } = req.params;
     const kata = await Challenges.findOne({ where: { id } });
-    return res.json(kata);
+    return kata
+      ? res.json(kata)
+      : res.status(404).json({ mesage: 'No kata found' });
   }
 
   async create(req, res, next) {

@@ -30,7 +30,6 @@ function onConnect(wsClient) {
         return;
       }
       functionsToTest[kataId] = fn;
-      fn();
     } catch (error) {
       wsClient.send('-red' + error.toString());
       wsClient.send('--failure--');

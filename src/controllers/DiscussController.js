@@ -11,7 +11,20 @@ class DiscussController {
       where: options,
       order: [['createdAt', 'DESC']],
     });
-    return res.json(comments);
+
+    return comments
+      ? res.json(comments)
+      : res.status(404).json({ message: 'Comments not found' });
+  }
+  async getUserComments(req, res) {
+    const { id } = req.params;
+    let comments = await Discuss.findAndCountAll({
+      where: { username: id },
+      order: [['createdAt', 'DESC']],
+    });
+    return comments
+      ? res.json(comments)
+      : res.status(404).json({ message: 'Comments not found' });
   }
 
   async createComment(req, res, next) {

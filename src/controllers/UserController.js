@@ -12,7 +12,9 @@ class UserController {
   async getOne(req, res) {
     const { id } = req.params;
     const user = await Users.findOne({ where: { username: id } });
-    return res.json(user);
+    return user
+      ? res.status(200).json(user)
+      : res.status(404).json({ message: 'User not found' });
   }
 
   async create(req, res, next) {
