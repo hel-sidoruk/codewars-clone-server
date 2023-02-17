@@ -4,10 +4,11 @@ const { Discuss } = require('../models/models');
 class DiscussController {
   async getComments(req, res) {
     const { id } = req.params;
-    let comments = await Discuss.findAll({
-      where: {
-        kataId: id,
-      },
+    const { label } = req.query;
+    const options = { kataId: id };
+    if (label) options.label = label;
+    let comments = await Discuss.findAndCountAll({
+      where: options,
       order: [['createdAt', 'DESC']],
     });
     return res.json(comments);
