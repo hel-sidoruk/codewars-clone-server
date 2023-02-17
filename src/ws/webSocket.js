@@ -1,6 +1,3 @@
-const WebSocket = require('ws');
-const WS_PORT = process.env.WS_PORT || 9000;
-const wsServer = new WebSocket.Server({ port: WS_PORT });
 const Mocha = require('mocha');
 const path = require('path');
 const functionsToTest = require('../tests/functionsToTest');
@@ -93,5 +90,4 @@ function onConnect(wsClient) {
 
 module.exports = {
   onConnect,
-  wsServer,
 };
