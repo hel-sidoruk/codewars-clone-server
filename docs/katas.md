@@ -1,8 +1,8 @@
-- **Katas**
-    - [Get Katas](https://github.com/hel-sidoruk/rs-clone-server/docs/katas.md#get-katas)
-    - [Get Random Katas](https://github.com/hel-sidoruk/rs-clone-server/docs/katas.md#get-random-katas)
-    - [Get Kata](https://github.com/hel-sidoruk/rs-clone-server/docs/katas.md#get-kata)
-    - [Create Kata](https://github.com/hel-sidoruk/rs-clone-server/docs/katas.md#create-kata)
+# Katas
+  - [Get Katas](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/katas.md#get-katas)
+  - [Get Random Katas](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/katas.md#get-random-katas)
+  - [Get Kata](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/katas.md#get-kata)
+  - [Create Kata](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/katas.md#create-kata)
 
 **Get Katas**
 ----

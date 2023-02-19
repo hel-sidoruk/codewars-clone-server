@@ -1,11 +1,11 @@
-- **Account**
-    - [Get Account info](https://github.com/hel-sidoruk/rs-clone-server/docs/account.md#get-account-info)
-    - [Edit Account info](https://github.com/hel-sidoruk/rs-clone-server/docs/account.md#edit-account-info)
-    - [Delete Account](https://github.com/hel-sidoruk/rs-clone-server/docs/account.md#delete-account)
-    - [Add trained kata](https://github.com/hel-sidoruk/rs-clone-server/docs/account.md#add-trained-kata)
-    - [Add solved kata](https://github.com/hel-sidoruk/rs-clone-server/docs/account.md#add-solved-kata)
-    - [Add starred kata](https://github.com/hel-sidoruk/rs-clone-server/docs/account.md#add-starred-kata)
-    - [Add forfeited kata](https://github.com/hel-sidoruk/rs-clone-server/docs/account.md#add-forfeited-kata)
+# Account
+  - [Get Account info](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/account.md#get-account-info)
+  - [Edit Account info](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/account.md#edit-account-info)
+  - [Delete Account](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/account.md#delete-account)
+  - [Add trained kata](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/account.md#add-trained-kata)
+  - [Add solved kata](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/account.md#add-solved-kata)
+  - [Add starred kata](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/account.md#add-starred-kata)
+  - [Add forfeited kata](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/account.md#add-forfeited-kata)
 
 **Get Account info**
 ----

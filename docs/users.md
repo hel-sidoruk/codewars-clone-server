@@ -1,8 +1,8 @@
-- **Users**
-    - [Get Users](https://github.com/hel-sidoruk/rs-clone-server/docs/users.md#get-users)
-    - [Get User](https://github.com/hel-sidoruk/rs-clone-server/docs/users.md#get-user)
-    - [Create User](https://github.com/hel-sidoruk/rs-clone-server/docs/users.md#create-user)
-    - [Update User](https://github.com/hel-sidoruk/rs-clone-server/docs/users.md#update-user)
+# Users
+  - [Get Users](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/users.md#get-users)
+  - [Get User](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/users.md#get-user)
+  - [Create User](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/users.md#create-user)
+  - [Update User](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/users.md#update-user)
 
 **Get Users**
 ----

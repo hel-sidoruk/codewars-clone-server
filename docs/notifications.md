@@ -1,7 +1,7 @@
-- **Notifications**
-    - [Get notifications](https://github.com/hel-sidoruk/rs-clone-server/docs/notifications.md#get-notifications)
-    - [Add notification](https://github.com/hel-sidoruk/rs-clone-server/docs/notifications.md#add-notification)
-    - [Delete notification](https://github.com/hel-sidoruk/rs-clone-server/docs/notifications.md#delete-notification)
+# Notifications
+  - [Get notifications](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/notifications.md#get-notifications)
+  - [Add notification](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/notifications.md#add-notification)
+  - [Delete notification](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/notifications.md#delete-notification)
 
 **Get notifications**
 ----

@@ -1,9 +1,9 @@
-- **Authorization**
-    - [Registration](https://github.com/hel-sidoruk/rs-clone-server/docs/auth.md#registration)
-    - [Login](https://github.com/hel-sidoruk/rs-clone-server/docs/auth.md#login)
-    - [Github Registration](https://github.com/hel-sidoruk/rs-clone-server/docs/auth.md#github-registration)
-    - [Github Login](https://github.com/hel-sidoruk/rs-clone-server/docs/auth.md#github-login)
-    - [Check](https://github.com/hel-sidoruk/rs-clone-server/docs/auth.md#check)
+# Authorization
+  - [Registration](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/auth.md#registration)
+  - [Login](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/auth.md#login)
+  - [Github Registration](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/auth.md#github-registration)
+  - [Github Login](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/auth.md#github-login)
+  - [Check](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/auth.md#check)
 
 **Registration**
 ----

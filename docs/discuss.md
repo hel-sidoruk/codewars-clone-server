@@ -1,9 +1,9 @@
-- **Discuss**
-    - [Get Comments](https://github.com/hel-sidoruk/rs-clone-server/docs/discuss.md#get-comments)
-    - [Get User Comments](https://github.com/hel-sidoruk/rs-clone-server/docs/discuss.md#get-user-comments)
-    - [Create Comment](https://github.com/hel-sidoruk/rs-clone-server/docs/discuss.md#create-comment)
-    - [Update Comment](https://github.com/hel-sidoruk/rs-clone-server/docs/discuss.md#update-comment)
-    - [Delete Comment](https://github.com/hel-sidoruk/rs-clone-server/docs/discuss.md#delete-comment)
+# Discuss
+  - [Get Comments](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/discuss.md#get-comments)
+  - [Get User Comments](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/discuss.md#get-user-comments)
+  - [Create Comment](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/discuss.md#create-comment)
+  - [Update Comment](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/discuss.md#update-comment)
+  - [Delete Comment](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/discuss.md#delete-comment)
 
 **Get Comments**
 ----

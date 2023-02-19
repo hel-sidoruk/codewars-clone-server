@@ -1,8 +1,8 @@
-- **Solutions**
-    - [Get Kata Solutions](https://github.com/hel-sidoruk//docs/solutions.md#get-kata-solutions)
-    - [Get User Solutions](https://github.com/hel-sidoruk//docs/solutions.md#get-user-solutions)
-    - [Add Solution](https://github.com/hel-sidoruk//docs/solutions.md#add-solution)
-    - [Update Solution](https://github.com/hel-sidoruk//docs/solutions.md#update-solution)
+# Solutions
+  - [Get Kata Solutions](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/solutions.md#get-kata-solutions)
+  - [Get User Solutions](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/solutions.md#get-user-solutions)
+  - [Add Solution](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/solutions.md#add-solution)
+  - [Update Solution](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/solutions.md#update-solution)
 
 **Get Kata Solutions**
 ----

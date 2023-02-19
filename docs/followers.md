@@ -1,9 +1,9 @@
-- **Followers**
-    - [Get following](https://github.com/hel-sidoruk/rs-clone-server/docs/followers.md#get-following)
-    - [Get followers](https://github.com/hel-sidoruk/rs-clone-server/docs/followers.md#get-followers)
-    - [Follow](https://github.com/hel-sidoruk/rs-clone-server/docs/followers.md#follow)
-    - [Unfollow](https://github.com/hel-sidoruk/rs-clone-server/docs/followers.md#unfollow)
-    - [Check following](https://github.com/hel-sidoruk/rs-clone-server/docs/followers.md#check-following)
+# Followers
+  - [Get following](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/followers.md#get-following)
+  - [Get followers](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/followers.md#get-followers)
+  - [Follow](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/followers.md#follow)
+  - [Unfollow](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/followers.md#unfollow)
+  - [Check following](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/followers.md#check-following)
 
 **Get following**
 ----
