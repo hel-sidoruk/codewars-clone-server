@@ -77,7 +77,7 @@ class KataController {
     const kata = await Challenges.findOne({ where: { id } });
     return kata
       ? res.json(kata)
-      : res.status(404).json({ mesage: 'No kata found' });
+      : res.status(404).json({ message: 'No kata found' });
   }
 
   async create(req, res, next) {

@@ -11,6 +11,7 @@ class FollowersController {
     });
     return res.json(data);
   }
+
   async getFollowers(req, res) {
     const { username } = req.params;
     const data = await Followers.findAll({ where: { followUser: username } });
