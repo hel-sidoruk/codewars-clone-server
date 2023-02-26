@@ -1,44 +1,36 @@
 # rs-clone-server
 API for "RS Clone".
-
-## Setup and Running
-
-- Clone this repo: `$ git clone https://github.com/hel-sidoruk/rs-clone-server`.
-- Go to downloaded folder: `$ cd rs-clone-server`.
-- Install dependencies: `$ npm install`.
-- Setup environment variables
-- Start server: `$ npm start`.
-- Now you can send requests to the address: `http://localhost:5000`.
+You can send requests to the address: `http://165.227.165.30:5000`
 
 ## Usage
 
-- **Katas**
+- ### [Katas](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/katas.md)
     - [Get Katas](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/katas.md#get-katas)
     - [Get Random Katas](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/katas.md#get-random-katas)
     - [Get Kata](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/katas.md#get-kata)
     - [Create Kata](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/katas.md#create-kata)
-- **Users**
+- ### [Users](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/users.md)
     - [Get Users](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/users.md#get-users)
     - [Get User](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/users.md#get-user)
     - [Create User](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/users.md#create-user)
     - [Update User](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/users.md#update-user)
-- **Discuss**
+- ### [Discuss](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/discuss.md)
     - [Get Comments](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/discuss.md#get-comments)
     - [Get User Comments](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/discuss.md#get-user-comments)
     - [Create Comment](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/discuss.md#create-comment)
     - [Update Comment](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/discuss.md#update-comment)
     - [Delete Comment](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/discuss.md#delete-comment)
-- **Solutions**
+- ### [Solutions](https://github.com/hel-sidoruk//docs/solutions.md)
     - [Get Solutions](https://github.com/hel-sidoruk//docs/solutions.md#get-solutions)
     - [Add Solution](https://github.com/hel-sidoruk//docs/solutions.md#add-solution)
     - [Update Solution](https://github.com/hel-sidoruk//docs/solutions.md#update-solution)
-- **Authorization**
+- ### [Authorization](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/auth.md)
     - [Registration](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/auth.md#registration)
     - [Login](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/auth.md#login)
     - [Github Registration](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/auth.md#github-registration)
     - [Github Login](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/auth.md#github-login)
     - [Check](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/auth.md#check)
-- **Account**
+- ### [Account](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/account.md)
     - [Get Account info](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/account.md#get-account-info)
     - [Edit Account info](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/account.md#edit-account-info)
     - [Delete Account](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/account.md#delete-account)
@@ -46,11 +38,11 @@ API for "RS Clone".
     - [Add solved kata](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/account.md#add-solved-kata)
     - [Add starred kata](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/account.md#add-starred-kata)
     - [Add forfeited kata](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/account.md#add-forfeited-kata)
-- **Notifications**
+- ### [Notifications](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/notifications.md)
     - [Get notifications](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/notifications.md#get-notifications)
     - [Add notification](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/notifications.md#add-notification)
     - [Delete notification](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/notifications.md#delete-notification)
-- **Followers**
+- ### [Followers](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/followers.md)
     - [Get following](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/followers.md#get-following)
     - [Get followers](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/followers.md#get-followers)
     - [Follow](https://github.com/hel-sidoruk/rs-clone-server/blob/main/docs/followers.md#follow)
