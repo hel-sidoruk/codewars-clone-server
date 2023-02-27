@@ -64,7 +64,7 @@ const functionsToTest = {
   '60edafd71dad1800563cf933': null,
   '56b71b1dbd06e6d88100092a': null,
   '514aa0dc21607ae236000017': null,
-  '55c211cce1ef691d9b000061': null, //Problems
+  '55c211cce1ef691d9b000061': null,
   '52b757663a95b11b3d00062d': null,
   '5887a6fe0cfe64850800161c': null,
   '62c93765cef6f10030dfa92b': null,
@@ -100,24 +100,6 @@ const functionsToTest = {
   '566d5e2e57d8fae53c00000c': null,
   '57f625992f4d53c24200070e': null,
   '5f709c8fb0d88300292a7a9d': null,
-
-  // '540de1f0716ab384b4000828': null, // Problems with correct solution
-  // '54e8c3e89e2ae6f4900005a1': null, //questions
-  // '5411e3e95f3a7f6a7a0000e3': null, //Array.reduce
-  // '525d50d2037b7acd6e000534': null, //Array.prototype
-  // '55afe435d2ce100356000032': null, //Array.filter
-  // '54592a5052756d5c5d0009c3': null, //head, tail + 2 more
-  // '558ccca75f511f2b0d0000f7': null, //Array.map
-  // '5388a9d60b24c52f4c000b5f': null, // function.bind
-  // '5784c8116211383b5f0001d3': null,// File class
-  // '5a19226646d843de9000007d': null, //Count consonants
-  // '53a1eac7e0afd3ad3300008b': null, //Mutual recursion
-  // '56fbdda707cff41b68000de2': null, //Cuboid and Cube
-  // '56fcc1ee45040039ab0016da': null, //Cube
-  // '56f935002e6c0d55fa000d92': null, //Animals
-  // '55bcf04de45497c54a0000d0': null, //Person
-  // '5366cfe48d004ce19600104b': null, // Object.create
-  // '527a6e602a7db3456e000a2b': null, //Object.prototype.hash
 };
 
 module.exports = functionsToTest;
